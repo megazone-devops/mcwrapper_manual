@@ -119,9 +119,11 @@
 - Wrapper-if
   > McWrapper의 외부 인터페이스를 담당하는 API 서비스
 
-* 서비스 우선순위
-* 서비스 연관관계
-* Database 초기화
+### 서비스 우선순위
+
+### 서비스 연관관계
+
+### Database 초기화
 
 ## Monolithic Version
 
