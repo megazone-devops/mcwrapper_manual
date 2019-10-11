@@ -66,17 +66,62 @@
       >   - -Dspring.cloud.config.server.git.privateKey=[ssh 프라이빗 키]
 
 - Gateway
+
+  > 마이크로서비스들의 단일 endpoint를 제공하는 router 서비스
+
+  - runtime options
+
+    - -Dserver.port=[서비스 포트]
+    - -Dspring.cloud.config.uri=[Config server 서비스 URI]
+    - -Dspring.cloud.config.headers.application-password=[Config server의 접속 패스워드]
+
+      설치 환경별 중요 민감 정보를 보호하기 위해 Config server의 접속 패스워드를 변경하는 경우 마이크로 서비스별 접속 패스워드를 Config server의 설정 정보와 일치시켜야 한다.
+
+    - -Dspring.profiles.active=[각 설치 타입과 환경별 프로파일명]
+
+      패키지 설치 시에는 application-site.yml 파일을 각 사이트별로 신규 생성하여 사이트에 의존적인 설정을 override 한다.
+
+      - 패키지 설치 시: package,site
+      - 각 환경별 설치 시: dev / stg / prd 등
+
 - Users
+
+  > 사용자 관리 및 로그인 등의 기능을 제공하는 공통 서비스
+
+  - runtime options: Gateway와 동일
+
 - Comments
+
+  > 댓글 기능을 제공하는 공통 서비스
+
+  - runtime options: Gateway와 동일
+
 - Notifications
-- Wrapper-app
-- Wrapper-md
-- Wrapper-if
+
+  > 알림 기능을 제공하는 공통 서비스
+
+  - runtime options: Gateway와 동일
+
 - Airplane
 
-- 서비스 우선순위
-- 서비스 연관관계
-- Database 초기화
+  > Wrapper-if와 연동하여 CI Tool의 API를 Wrapping 하는 서비스
+
+- Wrapper-app
+
+  > McWrapper의 UI 서비스
+  >
+  > Static Web
+
+- Wrapper-md
+
+  > core API를 재조합하여 McWrapper의 view model을 제공하는 API 서비스
+
+- Wrapper-if
+  > McWrapper의 외부 인터페이스를 담당하는 API 서비스
+
+* 서비스 우선순위
+* 서비스 연관관계
+* Database 초기화
 
 ## Monolithic Version
 
