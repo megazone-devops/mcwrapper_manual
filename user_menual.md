@@ -271,7 +271,9 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
 # 메뉴 설명
 
 ![Menu](./assets/images/menu_desc.png)
+
 ![GNB - 01](./assets/images/menu_desc_gnb01.png)
+
 ![GNB - 02](./assets/images/menu_desc_gnb02.png)
 
 - Administrator
