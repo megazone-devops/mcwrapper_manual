@@ -268,6 +268,30 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
 
 패스워드, 인증서 관련 정보 등을 포함한 보안이 필요한 정보입니다.
 
+# 메뉴 설명
+
+![Menu](./assets/images/menu_desc.png)
+![GNB - 01](./assets/images/menu_desc_gnb01.png)
+![GNB - 02](./assets/images/menu_desc_gnb02.png)
+
+- Administrator
+  - Manage groups: [그룹](#그룹)을 관리하고, [구성원](#구성원)을 추가하거나 제외시킵니다.
+  - manage permissions: 권한에 [그룹](#그룹)을 할당하거나 조회합니다.
+  - Manage users: [사용자](#사용자)를 관리하고, 조회합니다.
+  - Manage guests: 초대메일을 전송/재전송하고, 초대 정보를 관리합니다.
+- User
+  - Workspace: [워크스페이스](#워크스페이스) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
+  - Property: [프로퍼티](#프로퍼티) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
+  - Project: [프로젝트](#프로젝트) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
+- DevOps
+  - Default pipeline variable settings: 자주 사용되는 [파이프라인 변수](#파이프라인 변수)를 관리합니다.
+  - Manage pipelines: [파이프라인](#파이프라인)을 관리합니다.
+- GNB
+  - Home: 사이트의 메인 페이지로 이동합니다.
+  - Notifications: 나에게 도착한 알림 메시지를 조회하고, 클릭하여 관리화면으로 이동하는 인터페이스를 제공합니다.
+  - Create ...: 생성 권한이 있는 [워크스페이스](#워크스페이스), [프로퍼티](#프로퍼티), [프로젝트](#프로젝트), [스토리북](#스토리북), [릴리즈 티켓](#릴리즈 티켓)을 생성합니다.
+  - Profile: [사용자](#사용자) 정보를 조회하고, 수정합니다.
+
 # 역할 별 사용방법
 
 ## 사이트 관리자(Administrators)
