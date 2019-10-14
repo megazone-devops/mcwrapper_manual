@@ -159,8 +159,8 @@ Monolithic version의 경우 MSA Version과는 다르게 설정 서버가 별도
 
 ## 로그
 
-> 로그 경로 설정
-
-설정 파일(application.yml)의 logging.path에 설정합니다. 자세한 설정 방법은 [스프링부트 가이드](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)를 참조하세요.
+> **로그 경로 설정**
+>
+> 설정 파일(application.yml)의 logging.path에 설정합니다. 자세한 설정 방법은 [스프링부트 가이드](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)를 참조하세요.
 
 # 장애 대응
