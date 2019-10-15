@@ -276,19 +276,19 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
 
 ![GNB - 02](./assets/images/menu_desc_gnb02.png)
 
-- Administrator
-  - Manage groups: [그룹](#그룹)을 관리하고, [구성원](#구성원)을 추가하거나 제외시킵니다.
-  - manage permissions: 권한에 [그룹](#그룹)을 할당하거나 조회합니다.
-  - Manage users: [사용자](#사용자)를 관리하고, 조회합니다.
-  - Manage guests: 초대메일을 전송/재전송하고, 초대 정보를 관리합니다.
-- User
+- 관리자(Administrator)
+  - 그룹 관리(Manage groups): [그룹](#그룹)을 관리하고, [구성원](#구성원)을 추가하거나 제외시킵니다.
+  - 권한 관리(manage permissions): 권한에 [그룹](#그룹)을 할당하거나 조회합니다.
+  - 사용자 관리(Manage users): [사용자](#사용자)를 관리하고, 조회합니다.
+  - 초대 관리(Manage guests): 초대메일을 전송/재전송하고, 초대 정보를 관리합니다.
+- 사용자(User)
   - Workspace: [워크스페이스](#워크스페이스) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
   - Property: [프로퍼티](#프로퍼티) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
   - Project: [프로젝트](#프로젝트) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
-- DevOps
+- 데브옵스(DevOps)
   - Default pipeline variable settings: 자주 사용되는 [파이프라인 변수](#파이프라인 변수)를 관리합니다.
   - Manage pipelines: [파이프라인](#파이프라인)을 관리합니다.
-- GNB
+- 상단 메뉴(GNB)
   - Home: 사이트의 메인 페이지로 이동합니다.
   - Notifications: 나에게 도착한 알림 메시지를 조회하고, 클릭하여 관리화면으로 이동하는 인터페이스를 제공합니다.
   - Create ...: 생성 권한이 있는 [워크스페이스](#워크스페이스), [프로퍼티](#프로퍼티), [프로젝트](#프로젝트), [스토리북](#스토리북), [릴리즈 티켓](#릴리즈 티켓)을 생성합니다.
@@ -296,7 +296,53 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
 
 # 역할 별 사용방법
 
+## 일반 사용자
+
+### 회원 가입
+
+회원 가입은 초대된 이메일 주소로 발송된 링크를 통해서만 할 수 있습니다.
+
+
+
+### 로그인
+
+### 인터페이스
+
 ## 사이트 관리자(Administrators)
+
+사이트 관리자 권한은 시스템이 설치된 후 첫번째 로그인한 사용자에게 부여됩니다.
+
+[![사이트 관리자](./assets/images/administrator_01.gif)](./assets/videos/administrator_01.mp4)
+
+### 사용자 초대
+
+초대 관리 메뉴에서 이메일 주소를 이용하여 사용자를 초대 할 수 있습니다.
+
+[![사용자 초대](./assets/images/invite_users_01.gif)](./assets/videos/invite_users_01.mp4)
+
+여러 사람을 동시에 초대 할 수 있고, 초대와 동시에 가입 시 소속될 그룹이나 워크스페이스를 미리 지정 할 수도 있습니다.
+
+[![사용자 그룹 초대](./assets/images/invite_users_02.gif)](./assets/videos/invite_users_02.mp4)
+
+이미 초대된 사용자에게 초대 메일을 재발송 하거나 초대정보를 삭제 할 수 있습니다.
+
+[![초대 메일 재발송](./assets/images/invite_users_03.gif)](./assets/videos/invite_users_03.mp4)
+
+초대정보가 삭제된 사용자는 메일의 링크를 통해 가입을 시도하더라도 가입이 불가합니다.
+
+### 그룹 관리
+
+시스템에서 관리되는 그룹들과 별도로 커스텀 그룹을 만들고, 사용자를 추가 할 수 있습니다.
+
+[![커스텀 그룹 생성](./assets/images/create_group.gif)](./assets/videos/create_group.mp4)
+
+커스텀 그룹을 통해 쉽고, 빠르게 사용자들의 권한을 관리 할 수 있습니다.
+
+예를들어, DevOps 엔지니어가 아닌 PL의 경우 DevOps 엔지니어들이 만들어 놓은 파이프라인을 조회하여 참고할 필요가 있는데 이때 PL 그룹을 만들고, 해당 사용자들을 추가한 후 DevOps > Pipeline view 권한을 PL 그룹에 부여하면 PL 그룹에 소속된 구성원들은 파이프라인의 조회가 가능 해 집니다.
+
+
+
+### 권한 관리
 
 워크스페이스 관리자(Workspace Managers)도 언급 필요.
 
