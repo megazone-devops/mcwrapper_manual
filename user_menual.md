@@ -419,15 +419,15 @@ id_ed25519	id_ed25519.pub가 생성되어 있는 것을 확인할 수 있습니�
 4. git_private_key
    Github, GitLab 계정에 추가된 SSH 키를 복사합니다.
    ![project-pipeline-private_key](./assets/images/project-pipeline-private_key.gif)
-    * 중요.
-    빨간 색 박스 처리된 부분을 보시면 
-    - 첫 라인에 | 가 들어가야 되고 
-    - indent 1번 들어 가야 됩니다.
+   * 중요
+   (빨간 색 박스 처리된 부분을 보시면)
+   - 첫 라인에 | 가 들어가야 되고 
+   - indent 1번 들어 가야 됩니다.
 5. profile_active_dev,  
 6. profile_active_prd,  
 7. profile_active_stg 는  
 각각 development, production, staging을 넣어주면 된다.
-[![vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)]
+[vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
 
 ## 개발자(Developers)
 
