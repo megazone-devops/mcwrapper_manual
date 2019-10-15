@@ -362,22 +362,32 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
 이제 Terminal을 열고 ssh를 만들어 보겠습니다.
 먼저 ssh key를 생성하기 전에 이미 생성된 key가 있는지 확인해 보겠습니다.
 
-![project-pipeline-private_key-01](./assets/images/project-pipeline-private_key01.gif)
+```
+cd ~/.ssh
+No such file or directory
+```
 
 아직 한번도 ssh key를 생성하지 않은 상태입니다.
 ssh key pair를 만들어 보겠습니다.
 
 새로운 ED25519 SSH 키 쌍을 생성하십시오.
 
-![project-pipeline-private_key-02](./assets/images/project-pipeline-private_key02.gif)
+```
+ssh-keygen -t ed25519 -C "email@example.com"
+```
 
 또는 RSA를 사용하려는 경우 :
 
-![project-pipeline-private_key-03](./assets/images/project-pipeline-private_key03.gif)
+```
+ssh-keygen -o -t rsa -b 4096 -C "email@example.com"
+```
 
 이 -C플래그는 키가 여러 개이고 어느 것이 어떤 것인지 말하려는 경우 키에 주석을 추가합니다. 선택 사항입니다.
 
-![project-pipeline-private_key-04](./assets/images/project-pipeline-private_key04.gif)
+```
+Enter file in which to save the key (/Users/사용자이름/.ssh/id_ed25519):
+Created directory '/Users/사용자이름/.ssh'.
+```
 
 Enter file in which to save the key (/Users/사용자이름/.ssh/id_ed25519): 어디에 key를 만들지 묻습니다. 그냥 엔터를 처서 기본 위치에 기본 파일명으로 만들도록 합니다.
 Enter passphrase (empty for no passphrase):
@@ -386,7 +396,9 @@ Enter same passphrase again: key에 대한 비밀번호를 만들라고 나오�
 그럼 키가 만들어지고 기본 위치(/Users/사용자이름/.ssh/id_ed25519)에 파일이 생성됩니다.
 이제 생성이 되어 있는지 확인해 봅시다.
 
-![project-pipeline-private_key-05](./assets/images/project-pipeline-private_key05.gif)
+```
+cd ~/.ssh
+```
 
 id_ed25519	id_ed25519.pub가 생성되어 있는 것을 확인할 수 있습니다.
 이제 새로 생성 된 공개 키를 GitLab 계정에 추가 할 차례입니다.
@@ -395,11 +407,20 @@ id_ed25519	id_ed25519.pub가 생성되어 있는 것을 확인할 수 있습니�
 
 운영 체제에 따라 아래 명령 중 하나를 사용 하여 공개 SSH 키를 클립 보드에 복사하십시오 .
 
-![project-pipeline-private_key-06](./assets/images/project-pipeline-private_key06.gif)
+```
+맥 OS:
+pbcopy < ~/.ssh/id_ed25519.pub
+```
 
-![project-pipeline-private_key-07](./assets/images/project-pipeline-private_key07.gif)
+```
+WSL / GNU / Linux (xclip 패키지 필요) :
+xclip -sel clip < ~/.ssh/id_ed25519.pub
+```
 
-![project-pipeline-private_key-08](./assets/images/project-pipeline-private_key08.gif)
+```
+Windows의 Git Bash :
+cat ~/.ssh/id_ed25519.pub | clip
+```
 
 그래픽 편집기에서 키를 열고 여기에서 복사 할 수도 있지만 실수로 아무 것도 변경하지 않도록 주의하십시오.
 에디터에 ctrl+v 하면 복사된 private key 값이 나옵니다.
@@ -419,14 +440,14 @@ id_ed25519	id_ed25519.pub가 생성되어 있는 것을 확인할 수 있습니�
 4. git_private_key
    Github, GitLab 계정에 추가된 SSH 키를 복사합니다.
    ![project-pipeline-private_key](./assets/images/project-pipeline-private_key.gif)
-   * 중요
+   <span style="color:red"> * 중요</span>
    (빨간 색 박스 처리된 부분을 보시면)
    - 첫 라인에 | 가 들어가야 되고 
    - indent 1번 들어 가야 됩니다.
 5. profile_active_dev,  
 6. profile_active_prd,  
 7. profile_active_stg 는  
-각각 development, production, staging을 넣어주면 된다.
+각각 development, production, staging을 넣어주면 됩니다. 
 [vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
 
 ## 개발자(Developers)
