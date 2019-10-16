@@ -392,10 +392,9 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 
 ## Admin
 
-+ 로그인한 후
-+ 사용자 관리에서 사용자를 초대한다.
-+ 관리자 or DevOps를 DevOps 그룹에 추가한다.
-+ 관리자 or 사용자를 WorkspaceManagers 그룹에 추가한다.
++ 로그인한 후 -> 사용자 관리에서 사용자를 초대합니다.
++ 관리자 or DevOps를 DevOps 그룹에 추가합니다.
++ 관리자 or 사용자를 WorkspaceManagers 그룹에 추가합니다.
 
 ## 데브옵스 엔지니어(DevOps Engineers)
 + default credential을 설정할 수 있습니다.
