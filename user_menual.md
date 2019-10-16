@@ -486,27 +486,27 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
       [Settings] --> [SSH and GPG keys] --> [New SSH key]를 클릭합니다.  
       복사한 private key을 등록합니다.
 
-    ### Credentials 입력 예(vue)
+### Credentials 입력 예(vue)
       
-      ![project-pipeline-01](./assets/images/project-pipeline-reg.png)
-      1. git_address(Git 주소)
-         ssh://로 시작되는 git 주소를 입력합니다.
-      2. git_email(Git 계정 이메일 주소)
-         Git 계정 이메일 주소를 입력합니다.
-      3. git_name(Git 계정)
-         Git 계정을 입력합니다.
-      4. git_private_key
-         Github, GitLab 계정에 추가된 SSH 키를 복사합니다.
+![project-pipeline-01](./assets/images/project-pipeline-reg.png)
+1. git_address(Git 주소)
+    ssh://로 시작되는 git 주소를 입력합니다.
+2. git_email(Git 계정 이메일 주소)
+    Git 계정 이메일 주소를 입력합니다.
+3. git_name(Git 계정)
+    Git 계정을 입력합니다.
+4. git_private_key
+    Github, GitLab 계정에 추가된 SSH 키를 복사합니다.
 
-      ![project-pipeline-private_key](./assets/images/project-pipeline-private_key.gif)
-      * 중요
-      (빨간 색 박스 처리된 부분을 보시면)
-      - 첫 라인에 | 가 들어가야 되고 
-      - indent 1번 들어 가야 됩니다.
-      5. profile_active_dev,  
-      6. profile_active_prd,  
-      7. profile_active_stg 는  
-      각각 development, production, staging을 넣어주면 됩니다. [vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
+![project-pipeline-private_key](./assets/images/project-pipeline-private_key.gif)
+* 중요
+(빨간 색 박스 처리된 부분을 보시면)
+- 첫 라인에 | 가 들어가야 되고 
+- indent 1번 들어 가야 됩니다.
+5. profile_active_dev,  
+6. profile_active_prd,  
+7. profile_active_stg 는  
+각각 development, production, staging을 넣어주면 됩니다. [vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
 
 + 프로젝트 등록시 데브옵스 엔지니어가 등록한 파이프라인을 프로젝트에 등록할 수 있습니다.
 
