@@ -509,7 +509,6 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 각각 development, production, staging을 넣어주면 됩니다. [vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
 
 + 프로젝트 등록시 데브옵스 엔지니어가 등록한 파이프라인을 프로젝트에 등록할 수 있습니다.
-
 + 프로젝트 리더를 PL 역할로 설정합니다.
 + 프로젝트의 개발자들을 Developers 역할로 설정합니다.
 + 워크스페이스의 QA 담당자들 중 프로젝트 전담 QA를 QA 역할로 설정합니다.
