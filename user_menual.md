@@ -395,7 +395,6 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 파이프라인을 추가할 수 있습니다.
 
 ## 워크스페이스 관리자(Workspace Administrators)
-![Workspace Create](./assets/images/create-workspace.gif)
 + 워크스페이스를 생성합니다.
 + 워크스페이스에 멤버를 추가합니다.
 + 프로퍼티 생성 권한자를 PropertyManager 그룹에 추가합니다.
@@ -404,13 +403,11 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 배포자를 Deployer 그룹에 추가합니다.
 
 ## 프로퍼티 관리자(Property Managers) 
-![Property Create](./assets/images/create-property.gif)
 + 프로퍼티를 생성합니다.
 + 스토리북의 유저 스토리를 프로젝트에 매핑할 담당자를 DevDesk 그룹에 추가합니다.
 + 프로퍼티에서 스토리북을 생성할 담당자를 Requesters 그룹에 추가합니다.
  
 ## 프로젝트 관리자(Project Managers)
-![Property Create](./assets/images/create-project.gif)
 + 프로젝트 생성 및 사용할 파이프라인 선택과 프로젝트에서 설정할 credential을 입력한다.
     + credential에 입력할 git private key를 등록해야 되는데 SSH 키가 없다면 새로운 SSH 키 페어를 생성해야 합니다.
       이제 Terminal을 열고 ssh를 만들어 보겠습니다.
@@ -509,7 +506,6 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 워크스페이스의 배포 담당자들 중 프로젝트 전담 배포자를 Deployer 역할로 설정합니다.
 
 ## 요청자(Requester)
-![Property Create](./assets/images/create-storybook.gif)
 + 스토리북을 생성할 수 있습니다.
 
 ## PL(Project Leader)
