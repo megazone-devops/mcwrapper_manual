@@ -491,7 +491,7 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
     Github, GitLab 계정에 추가된 SSH 키를 복사합니다.
 
 ![project-pipeline-private_key](./assets/images/project-pipeline-private_key.gif)  
-[중요](#e83f62) (빨간 색 박스 처리된 부분을 보시면)
+**git private key등록시 주의사항**  (빨간 색 박스 처리된 부분을 보시면)
 - 첫 라인에 | 가 들어가야 되고 
 - indent 1번 들어 가야 됩니다.
 5. profile_active_dev,  
@@ -519,6 +519,7 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 릴리즈를 완료합니다.
 
 ## 개발자(Developers)
++ 할당된 티켓을 확인합니다.
 
 ## 데브데스트(DevDesk)
 + 유저스토리에 프로젝트를 매핑할 수 있습니다.
