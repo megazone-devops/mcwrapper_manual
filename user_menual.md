@@ -395,7 +395,7 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 파이프라인을 추가할 수 있습니다.
 
 ## 워크스페이스 관리자(Workspace Administrators)
-
+> ![Workspace Create](./assets/images/create-workspace.gif)
 + 워크스페이스를 생성합니다.
 + 워크스페이스에 멤버를 추가합니다.
 + 프로퍼티 생성 권한자를 PropertyManager 그룹에 추가합니다.
@@ -528,3 +528,7 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 
 ## 배포 담당자(Deployer)
 + 운영환경 배포를 시작합니다.
+
+# Stortbook 사용방법
+
+# Ticket 사용방법
