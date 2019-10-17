@@ -514,6 +514,10 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 유저스토리에 프로젝트를 매핑한다.
 + 유저스토리에 매핑된 프로젝트의 릴리즈 티켓을 선택한다.
 
+## 워크스페이스에 속한 모든 멤버(Workspace Member)
+![Property-create](./assets/images/create-ticket.gif)
++ 티켓을 생성할 수 있습니다.
+
 ## PL(Project Leader)
 + 유저스토리에 매핑된 프로젝트의 릴리즈 티켓을 선택할 수 있습니다.
 + 설계를 완료합니다.
@@ -534,7 +538,3 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 
 ## 배포 담당자(Deployer)
 + 운영환경 배포를 시작합니다.
-
-# Stortbook 사용방법
-
-# Ticket 사용방법
