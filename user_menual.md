@@ -509,6 +509,7 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 워크스페이스의 배포 담당자들 중 프로젝트 전담 배포자를 Deployer 역할로 설정합니다.
 
 ## 요청자(Requester)
+![Property Create](./assets/images/create-storybook.gif)
 + 스토리북을 생성할 수 있습니다.
 
 ## PL(Project Leader)
