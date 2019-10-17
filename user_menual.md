@@ -410,6 +410,7 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 프로퍼티에서 스토리북을 생성할 담당자를 Requesters 그룹에 추가합니다.
  
 ## 프로젝트 관리자(Project Managers)
+![Property Create](./assets/images/create-project.gif)
 + 프로젝트 생성 및 사용할 파이프라인 선택과 프로젝트에서 설정할 credential을 입력한다.
     + credential에 입력할 git private key를 등록해야 되는데 SSH 키가 없다면 새로운 SSH 키 페어를 생성해야 합니다.
       이제 Terminal을 열고 ssh를 만들어 보겠습니다.
