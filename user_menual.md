@@ -530,8 +530,8 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 할당된 티켓을 확인합니다.
 
 ## 데브데스트(DevDesk)
-+ 유저스토리에 프로젝트를 매핑할 수 있습니다.
 ![Property-create](./assets/images/devdesk-project-mapping.gif)
++ 유저스토리에 프로젝트를 매핑할 수 있습니다.
 
 ## 검수 담당자(Quality Assurance)
 + 스테이징 테스트를 시작합니다.
