@@ -395,7 +395,7 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + 파이프라인을 추가할 수 있습니다.
 
 ## 워크스페이스 관리자(Workspace Administrators)
-> ![Workspace Create](./assets/images/create-workspace.gif)
+![Workspace Create](./assets/images/create-workspace.gif)
 + 워크스페이스를 생성합니다.
 + 워크스페이스에 멤버를 추가합니다.
 + 프로퍼티 생성 권한자를 PropertyManager 그룹에 추가합니다.
@@ -403,7 +403,8 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 + QA를 QA Pool 그룹에 추가합니다.
 + 배포자를 Deployer 그룹에 추가합니다.
 
-## 워크스페이스 관리자 프로퍼티 관리자(Property Managers) 
+## 프로퍼티 관리자(Property Managers) 
+![Property Create](./assets/images/create-property.gif)
 + 프로퍼티를 생성합니다.
 + 스토리북의 유저 스토리를 프로젝트에 매핑할 담당자를 DevDesk 그룹에 추가합니다.
 + 프로퍼티에서 스토리북을 생성할 담당자를 Requesters 그룹에 추가합니다.
