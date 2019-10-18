@@ -468,6 +468,15 @@ profile_active_prd: prd # production env active profile
 
 ![Property-create](./assets/images/create-project.gif)
 
+- 프로젝트 등록시 데브옵스 엔지니어가 등록한 파이프라인을 프로젝트에 등록할 수 있습니다.
+- 프로젝트 리더를 PL 역할로 설정합니다.
+- 프로젝트의 개발자들을 Developers 역할로 설정합니다.
+- 워크스페이스의 QA 담당자들 중 프로젝트 전담 QA를 QA 역할로 설정합니다.
+- 워크스페이스의 배포 담당자들 중 프로젝트 전담 배포자를 Deployer 역할로 설정합니다.
+
+### 파이프라인 등록
+![Property-create](./assets/images/project_pipeline_setting.gif)
+
 - 프로젝트 생성 및 사용할 파이프라인 선택과 프로젝트에서 설정할 credential을 입력한다.
 
   - credential에 입력할 git private key를 등록해야 되는데 SSH 키가 없다면 새로운 SSH 키 페어를 생성해야 합니다.
@@ -563,12 +572,6 @@ profile_active_prd: prd # production env active profile
 7. profile_active_stg 는  
    각각 development, production, staging을 넣어주면 됩니다. [vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
 
-- 프로젝트 등록시 데브옵스 엔지니어가 등록한 파이프라인을 프로젝트에 등록할 수 있습니다.
-- 프로젝트 리더를 PL 역할로 설정합니다.
-- 프로젝트의 개발자들을 Developers 역할로 설정합니다.
-- 워크스페이스의 QA 담당자들 중 프로젝트 전담 QA를 QA 역할로 설정합니다.
-- 워크스페이스의 배포 담당자들 중 프로젝트 전담 배포자를 Deployer 역할로 설정합니다.
-
 ## 요청자(Requester)
 
 ![Property-create](./assets/images/create-storybook.gif)
@@ -584,10 +587,9 @@ profile_active_prd: prd # production env active profile
 - 티켓을 생성할 수 있습니다.
 
 ## PL(Project Leader) 
-
 - 유저스토리에 매핑된 프로젝트의 릴리즈 티켓을 선택할 수 있습니다.
-- 설계를 완료합니다.
-- 개발 브랜치를 생성합니다.
+- 설계를 완료합니다.  (요건된 전반적인 설계를 합니다.)
+- 개발 브랜치를 생성합니다.   (해당되는 티켓의 하단 Design done 버튼을 누르면 생성된 개발브랜치가 댓글에 추가가 됩니다.)
 - 개발을 시작합니다.
 - 개발을 완료합니다.
 - 릴리즈를 완료합니다.
@@ -607,7 +609,6 @@ profile_active_prd: prd # production env active profile
 - 스테이징 테스트를 시작합니다.
 - 스테이징 테스트를 완료합니다.
   
-
 ## 배포 담당자(Deployer)
 
 # 파이프라인 작성 방법
