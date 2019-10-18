@@ -563,7 +563,7 @@ profile_active_prd: prd # production env active profile
 
 - 티켓을 생성할 수 있습니다.
 
-## PL(Project Leader)
+## PL(Project Leader) 
 
 - 유저스토리에 매핑된 프로젝트의 릴리즈 티켓을 선택할 수 있습니다.
 - 설계를 완료합니다.
