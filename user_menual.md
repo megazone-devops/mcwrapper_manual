@@ -369,10 +369,10 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 
 시스템에 미리 정의된 그룹들이 존재합니다. 이 그룹들은 삭제가 불가합니다.
 
-- Administrators: 사이트의 관리자 그룹
-- DevOps: DevOps 메뉴에 접근권한을 가지는 그룹
-- WorkspaceManagers: [워크스페이스](#워크스페이스) 생성권한을 가지는 그룹
-- Users: 사용자들이 속하게 되는 기본 그룹
+- Administrators: 사이트의 관리자 그룹입니다.
+- DevOps: DevOps 메뉴에 접근권한을 가지는 그룹입니다.
+- WorkspaceManagers: [워크스페이스](#워크스페이스) 생성 권한을 가지는 그룹입니다.
+- Users: 가입된 후 사용자들이 속하게 되는 기본 그룹. 다른 그룹에 소속되면 제외됩니다.
 
 시스템에서 관리되는 그룹들과 별도로 커스텀 그룹을 만들고, 사용자를 추가 할 수 있습니다.
 
@@ -387,6 +387,39 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 [![커스텀 그룹 활용](./assets/images/group_permission.gif)](./assets/videos/group_permission.mp4)
 
 ## 데브옵스 엔지니어(DevOps Engineers)
+
+데브옵스 엔지니어는 CI/CD [파이프라인](#파이프라인) 템플릿을 작성하고, 관리하는 역할을 합니다.
+
+Manage pipelines 메뉴에서 파이프라인 템플릿을 작성하고, 약속된 규약에 따라 작성된 [파이프라인 변수](#파이프라인 변수)들을 프로젝트별로 다르게 입력하여 프로젝트마다 파이프라인을 작성해야 하는 수고를 덜 수 있습니다.
+
+### Default pipeline variable settings
+
+Default pipeline variable settings 메뉴에서는 자주 사용되고, 개인정보가 아닌(ex. 이메일 주소, 패스워드 등) [파이프라인 변수](#파이프라인 변수)들의 값을 미리 설정 해 놓을 수 있습니다.
+
+예를들어, [빌드](#빌드)된 [산출물](#산출물)을 팀 또는 사내에서 운영하는 Docker Registry에 Push 하는 프로세스가 파이프라인에 자주 사용된다면 Docker Registry 주소나 계정 정보를 반복적으로 입력해야 합니다.
+
+이때, Default pipeline variable settings 메뉴에 [파이프라인 변수](#파이프라인 변수)로 등록 해 놓으면 [파이프라인 변수](#파이프라인 변수) 등록 시 자동으로 입력되기 때문에 [프로젝트](#프로젝트) 마다 일일이 등록하지 않아도 됩니다.
+
+또, 1Depth YAML 형태로 한번에 [파이프라인 변수](#파이프라인 변수)를 등록하는 편의 기능도 제공이 됩니다.
+
+```yml
+docker_registry_adderess: registry.mycorporation.com # Docker Registry Address
+profile_active_dev: dev # development env active profile
+profile_active_stg: stg # staging env active profile
+profile_active_prd: prd # production env active profile
+```
+
+[![기본 파이프라인 변수 등록 - 01](./assets/images/default_pipeline_variable_01.gif)](./assets/videos/default_pipeline_variable_01.mp4)
+
+[파이프라인 변수](#파이프라인 변수)를 등록한 후 패스워드와 같이 노출 되면 안되는 값들은 마스킹 처리를 하여 줍니다.
+
+실제 데이터에는 마스킹 여부와 상관없이 모두 암호화됩니다.
+
+[![기본 파이프라인 변수 등록 - 02](./assets/images/default_pipeline_variable_02.gif)](./assets/videos/default_pipeline_variable_02.mp4)
+
+### Manage pipelines
+
+자세한 파이프라인 작성 방법은 [파이프라인 작성 방법](#파이프라인 작성 방법)을 참조하시기 바랍니다.
 
 ## 워크스페이스 관리자(Workspace Administrators) / 프로퍼티 관리자(Property Managers) / 프로젝트 관리자(Project Managers)
 
@@ -495,3 +528,17 @@ cat ~/.ssh/id_ed25519.pub | clip
 ## 검수 담당자(Quality Assurance)
 
 ## 배포 담당자(Deployer)
+
+# 파이프라인 작성 방법
+
+## McWrapper와 연동을 위한 변수들
+
+아래 변수들의 값은 McWrapper에서 자동으로 입력됩니다.
+
+- wrapper_group_name: 파이프라인 그룹명(워크스페이스 ID)
+- wrapper_project_code: 프로젝트 코드
+- wrapper_ticket_number: 티켓 번호
+- ticket_version: 티켓 버전
+- rollback_version: 롤백 버전
+- callback_url_success: 성공 callback url
+- callback_url_fail: 실패 callback url
