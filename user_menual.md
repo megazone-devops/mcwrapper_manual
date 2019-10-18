@@ -290,7 +290,7 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
   - Property: [프로퍼티](#프로퍼티) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
   - Project: [프로젝트](#프로젝트) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
 - 데브옵스(DevOps)
-  - Default pipeline variable settings: 자주 사용되는 [파이프라인 변수](#파이프라인 변수)를 관리합니다.
+  - Default pipeline variable settings: 자주 사용되는 [파이프라인 변수](#파이프라인%20변수)를 관리합니다.
   - Manage pipelines: [파이프라인](#파이프라인)을 관리합니다.
 - 상단 메뉴(GNB)
   - Home: 사이트의 메인 페이지로 이동합니다.
@@ -394,17 +394,17 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 
 데브옵스 엔지니어는 CI/CD [파이프라인](#파이프라인) 템플릿을 작성하고, 관리하는 역할을 합니다.
 
-Manage pipelines 메뉴에서 파이프라인 템플릿을 작성하고, 약속된 규약에 따라 작성된 [파이프라인 변수](#파이프라인 변수)들을 프로젝트별로 다르게 입력하여 프로젝트마다 파이프라인을 작성해야 하는 수고를 덜 수 있습니다.
+Manage pipelines 메뉴에서 파이프라인 템플릿을 작성하고, 약속된 규약에 따라 작성된 [파이프라인 변수](#파이프라인%20변수)들을 프로젝트별로 다르게 입력하여 프로젝트마다 파이프라인을 작성해야 하는 수고를 덜 수 있습니다.
 
 ### Default pipeline variable settings
 
-Default pipeline variable settings 메뉴에서는 자주 사용되고, 개인정보가 아닌(ex. 이메일 주소, 패스워드 등) [파이프라인 변수](#파이프라인 변수)들의 값을 미리 설정 해 놓을 수 있습니다.
+Default pipeline variable settings 메뉴에서는 자주 사용되고, 개인정보가 아닌(ex. 이메일 주소, 패스워드 등) [파이프라인 변수](#파이프라인%20변수)들의 값을 미리 설정 해 놓을 수 있습니다.
 
 예를들어, [빌드](#빌드)된 [산출물](#산출물)을 팀 또는 사내에서 운영하는 Docker Registry에 Push 하는 프로세스가 파이프라인에 자주 사용된다면 Docker Registry 주소나 계정 정보를 반복적으로 입력해야 합니다.
 
-이때, Default pipeline variable settings 메뉴에 [파이프라인 변수](#파이프라인 변수)로 등록 해 놓으면 [파이프라인 변수](#파이프라인 변수) 등록 시 자동으로 입력되기 때문에 [프로젝트](#프로젝트) 마다 일일이 등록하지 않아도 됩니다.
+이때, Default pipeline variable settings 메뉴에 [파이프라인 변수](#파이프라인%20변수)로 등록 해 놓으면 [파이프라인 변수](#파이프라인%20변수) 등록 시 자동으로 입력되기 때문에 [프로젝트](#프로젝트) 마다 일일이 등록하지 않아도 됩니다.
 
-또, 1Depth YAML 형태로 한번에 [파이프라인 변수](#파이프라인 변수)를 등록하는 편의 기능도 제공이 됩니다.
+또, 1Depth YAML 형태로 한번에 [파이프라인 변수](#파이프라인%20변수)를 등록하는 편의 기능도 제공이 됩니다.
 
 ```yml
 docker_registry_adderess: registry.mycorporation.com # Docker Registry Address
@@ -415,7 +415,7 @@ profile_active_prd: prd # production env active profile
 
 [![기본 파이프라인 변수 등록 - 01](./assets/images/default_pipeline_variable_01.gif)](./assets/videos/default_pipeline_variable_01.mp4)
 
-[파이프라인 변수](#파이프라인 변수)를 등록한 후 패스워드와 같이 노출 되면 안되는 값들은 마스킹 처리를 하여 줍니다.
+[파이프라인 변수](#파이프라인%20변수)를 등록한 후 패스워드와 같이 노출 되면 안되는 값들은 마스킹 처리를 하여 줍니다.
 
 실제 데이터에는 마스킹 여부와 상관없이 모두 암호화됩니다.
 
@@ -423,7 +423,7 @@ profile_active_prd: prd # production env active profile
 
 ### Manage pipelines
 
-자세한 파이프라인 작성 방법은 [파이프라인 작성 방법](#파이프라인 작성 방법)을 참조하시기 바랍니다.
+자세한 파이프라인 작성 방법은 [파이프라인 작성 방법](#파이프라인%20작성%20방법)을 참조하시기 바랍니다.
 
 ## 워크스페이스 관리자(Workspace Administrators)
 
