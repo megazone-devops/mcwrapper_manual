@@ -587,6 +587,7 @@ profile_active_prd: prd # production env active profile
 - 티켓을 생성할 수 있습니다.
 
 ## PL(Project Leader) 
+![storybook_mapping_and_release_ticket](./assets/images/storybook_mapping_and_release_ticket.gif)
 - 유저스토리에 매핑된 프로젝트의 릴리즈 티켓을 선택할 수 있습니다.
 - 설계를 완료합니다.  (요건된 전반적인 설계를 합니다.)
 - 개발 브랜치를 생성합니다.   (해당되는 티켓의 하단 Design done 버튼을 누르면 생성된 개발브랜치가 댓글에 추가가 됩니다.)
