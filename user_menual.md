@@ -614,7 +614,7 @@ profile_active_prd: prd # production env active profile
 
 # 파이프라인 작성 방법
 
-## McWrapper와 연동을 위한 변수들
+## McWrapper 구조
 
 ![Property-create](./assets/images/write_pipeline00.png)
 
