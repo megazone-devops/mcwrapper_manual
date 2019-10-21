@@ -616,7 +616,7 @@ profile_active_prd: prd # production env active profile
 
 ## McWrapper와 연동을 위한 변수들
 
-![Property-create](./assets/images/write_pipeline01.png)
+![Property-create](./assets/images/write_pipeline00.png)
 
 Pipeline.yml 파일은 크게 Resources 부분과 Jobs 부분으로 구성되어 있다. 필요에 의해 위의 그림과 같이 Credentials.yml로 분리하여 보안이 필요하거나 유동적인 변수들을 별도로 저장해 불러올 수 있습니다.
 
