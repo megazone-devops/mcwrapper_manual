@@ -616,6 +616,53 @@ profile_active_prd: prd # production env active profile
 
 ## McWrapper와 연동을 위한 변수들
 
+![Property-create](./assets/images/write_pipeline01.png)
+
+Pipeline.yml 파일은 크게 Resources 부분과 Jobs 부분으로 구성되어 있다. 필요에 의해 위의 그림과 같이 Credentials.yml로 분리하여 보안이 필요하거나 유동적인 변수들을 별도로 저장해 불러올 수 있습니다.
+
+### Resources 
+
+- job에서 사용할 resource들의 요소를 선언해주는 부분입니다.
+    주로 특정 데이터를 불러오는 resource와 작업한 데이터를 배포,전달 해주는 resource들로 구성되어 있습니다. 
+    
+![Property-create](./assets/images/write_pipeline02.png)
+
+### Jobs
+
+- 분리된 하나의 실행 단위 입니다.  Aggregate, Task, Put순으로 실행됩니다
+    Aggregate
+    - Task에서 사용할 resource를 불러오는 부분입니다
+    - passed:  현재의 잡이 어떤 Job이후에 실행될지 선언해 줄 수 있습니다.
+    - trigger: 연결된 리소스가 완료가 될시 자동으로 현재의 job이 실행됩니다.
+    Task
+    - 이 Job에서의 실행 환경과 source들을 가져올 수 있으며 cli명령어를 작성하여 실행시킬 수 있는 부분입니다
+    Put
+    - Task 이후에 실행되는 부분으로써 Resources에서 선언된 resource를 실행할 수 있습니다.
+
+## McWrapper 구조
+
+![Property-create](./assets/images/write_pipeline03.png)
+
+
+Test
+-build 시작 전 정상 작동이 가능한지 테스트를 진행하는 부분입니다.
+Build
+-배포를 위해 빌드를 진행한 artifact를 산출해내는 부분입니다.
+Deploy
+- 빌드된 artifact를 불러와 배포를 진행하는 부분 입니다.
+stg-merge
+- dev에 배포된 내용의 merge를 수동 진행하도록 하는 부분입니다.
+pass-stg
+- prod 서버에 배포하는 내용을 수동으로 실시해주는 부분입니다.
+Merge
+- 배포가 완료된 후 git의 merge를 실행하는 부분입니다.
+Roll-back
+- 배포 후 문제가 발생시 이 직전의 버전으로 Roll-back이 진행되며 파이프라인은 종료됩니다.
+Close
+- 정상적으로 완료 된후 티켓을 수동으로 종료해주는 부분입니다.
+
+## McWrapper와 연동을 위한 변수들
+
 아래 변수들의 값은 McWrapper에서 자동으로 입력됩니다.
 
 - wrapper_group_name: 파이프라인 그룹명(워크스페이스 ID)
