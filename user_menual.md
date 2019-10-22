@@ -445,28 +445,45 @@ profile_active_prd: prd # production env active profile
 
 복사한 후 변경되어야 할 내용만 수정하면 됩니다.
 
-## 워크스페이스 관리자(Workspace Administrators)
+## 워크스페이스 관리자(Workspace Managers)
 
-![workspace-create](./assets/images/create-workspace.gif)
+워크스페이스 관리자는 사이트 관리자에 의해 권한을 부여받습니다. ([사이트 관리자 참조](#그룹-관리-&-권한관리))
 
-- 워크스페이스를 생성합니다.
-- 워크스페이스에 멤버를 추가합니다.
-- 프로퍼티 생성 권한자를 PropertyManager 그룹에 추가합니다.
-- 프로젝트 생성 권한자를 ProjectManager 그룹에 추가합니다.
-- QA를 QA Pool 그룹에 추가합니다.
-- 배포자를 Deployer 그룹에 추가합니다.
+워크스페이스 관리자는 [워크스페이스](#워크스페이스) 생성 권한을 가집니다.
+
+[![워크스페이스 생성](./assets/images/workspace_manager_01.gif)](./assets/videos/workspace_manager_01.mp4)
+
+워크스페이스 생성 후 구성원을 추가하여 줍니다.
+
+[![워크스페이스 구성원 관리](./assets/images/workspace_manager_02.gif)](./assets/videos/workspace_manager_02.mp4)
+
+각 권한 그룹에 해당 사용자들을 추가하여 줍니다.
+
+[![워크스페이스 그룹별 구성원 관리](./assets/images/workspace_manager_03.gif)](./assets/videos/workspace_manager_03.mp4)
 
 ## 프로퍼티 관리자(Property Managers)
 
-![Property-create](./assets/images/create-property.gif)
+프로퍼티 관리자는 [워크스페이스 관리자](<#워크스페이스-관리자(Workspace-Managers)>)로부터 권한을 부여받습니다.
 
-- 프로퍼티를 생성합니다.
-- 스토리북의 유저 스토리를 프로젝트에 매핑할 담당자를 DevDesk 그룹에 추가합니다.
-- 프로퍼티에서 스토리북을 생성할 담당자를 Requesters 그룹에 추가합니다.
+프로퍼티 관리자는 [프로퍼티](#프로퍼티)를 생성할 수 있습니다.
+
+[![프로퍼티 생성](./assets/images/property_manager_01.gif)](./assets/videos/property_manager_01.mp4)
+
+[데브데스크](<#데브데스크(DevDesk)>) 및 [요청자](<#요청자(Requester)>) 권한 그룹에 해당 사용자들을 추가하여 줍니다.
+
+[![프로퍼티 그룹별 구성원 관리](./assets/images/property_manager_02.gif)](./assets/videos/property_manager_02.mp4)
 
 ## 프로젝트 관리자(Project Managers)
 
-![Property-create](./assets/images/create-project.gif)
+프로젝트 관리자는 [워크스페이스 관리자](<#워크스페이스-관리자(Workspace-Managers)>)로부터 권한을 부여받습니다.
+
+프로젝트 관리자는 [프로젝트](#프로젝트)를 생성할 수 있습니다.
+
+[![프로젝트 생성](./assets/images/project_manager_01.gif)](./assets/videos/project_manager_01.mp4)
+
+프로젝트 생성 후 프로젝트에 맞는 [파이프라인](#파이프라인)을 선택하고, [파이프라인 변수](#파이프라인-변수)를 설정해야 합니다.
+
+![파이프라인 선택 및 변수 등록](./assets/images/project_pipeline_setting.png)
 
 - 프로젝트 등록시 데브옵스 엔지니어가 등록한 파이프라인을 프로젝트에 등록할 수 있습니다.
 - 프로젝트 리더를 PL 역할로 설정합니다.
@@ -475,6 +492,7 @@ profile_active_prd: prd # production env active profile
 - 워크스페이스의 배포 담당자들 중 프로젝트 전담 배포자를 Deployer 역할로 설정합니다.
 
 ### 파이프라인 등록
+
 ![Property-create](./assets/images/project_pipeline_setting.gif)
 
 - 프로젝트 생성 및 사용할 파이프라인 선택과 프로젝트에서 설정할 credential을 입력한다.
@@ -586,11 +604,13 @@ profile_active_prd: prd # production env active profile
 
 - 티켓을 생성할 수 있습니다.
 
-## PL(Project Leader) 
+## PL(Project Leader)
+
 ![storybook_mapping_and_release_ticket](./assets/images/storybook_mapping_and_release_ticket.gif)
+
 - 유저스토리에 매핑된 프로젝트의 릴리즈 티켓을 선택할 수 있습니다.
-- 설계를 완료합니다.  (요건된 전반적인 설계를 합니다.)
-- 개발 브랜치를 생성합니다.   (해당되는 티켓의 하단 Design done 버튼을 누르면 생성된 개발브랜치가 댓글에 추가가 됩니다.)
+- 설계를 완료합니다. (요건된 전반적인 설계를 합니다.)
+- 개발 브랜치를 생성합니다. (해당되는 티켓의 하단 Design done 버튼을 누르면 생성된 개발브랜치가 댓글에 추가가 됩니다.)
 - 개발을 시작합니다.
 - 개발을 완료합니다.
 - 릴리즈를 완료합니다.
@@ -610,6 +630,7 @@ profile_active_prd: prd # production env active profile
 - 스테이징 테스트를 시작합니다.
 - 스테이징 테스트를 완료합니다.
   
+
 ## 배포 담당자(Deployer)
 
 # 파이프라인 작성 방법
@@ -620,45 +641,44 @@ profile_active_prd: prd # production env active profile
 
 Pipeline.yml 파일은 크게 Resources 부분과 Jobs 부분으로 구성되어 있다. 필요에 의해 위의 그림과 같이 Credentials.yml로 분리하여 보안이 필요하거나 유동적인 변수들을 별도로 저장해 불러올 수 있습니다.
 
-### Resources 
+### Resources
 
 - job에서 사용할 resource들의 요소를 선언해주는 부분입니다.
-    주로 특정 데이터를 불러오는 resource와 작업한 데이터를 배포,전달 해주는 resource들로 구성되어 있습니다. 
-    
+  주로 특정 데이터를 불러오는 resource와 작업한 데이터를 배포,전달 해주는 resource들로 구성되어 있습니다.
+
 ![Property-create](./assets/images/write_pipeline02.png)
 
 ### Jobs
 
-- 분리된 하나의 실행 단위 입니다.  Aggregate, Task, Put순으로 실행됩니다
-    Aggregate
-    - Task에서 사용할 resource를 불러오는 부분입니다
-    - passed:  현재의 잡이 어떤 Job이후에 실행될지 선언해 줄 수 있습니다.
-    - trigger: 연결된 리소스가 완료가 될시 자동으로 현재의 job이 실행됩니다.
+- 분리된 하나의 실행 단위 입니다. Aggregate, Task, Put순으로 실행됩니다
+  Aggregate
+  - Task에서 사용할 resource를 불러오는 부분입니다
+  - passed: 현재의 잡이 어떤 Job이후에 실행될지 선언해 줄 수 있습니다.
+  - trigger: 연결된 리소스가 완료가 될시 자동으로 현재의 job이 실행됩니다.
     Task
-    - 이 Job에서의 실행 환경과 source들을 가져올 수 있으며 cli명령어를 작성하여 실행시킬 수 있는 부분입니다
+  - 이 Job에서의 실행 환경과 source들을 가져올 수 있으며 cli명령어를 작성하여 실행시킬 수 있는 부분입니다
     Put
-    - Task 이후에 실행되는 부분으로써 Resources에서 선언된 resource를 실행할 수 있습니다.
+  - Task 이후에 실행되는 부분으로써 Resources에서 선언된 resource를 실행할 수 있습니다.
 
 ## McWrapper 구조
 
 ![Property-create](./assets/images/write_pipeline03.png)
 
-
 Test
 -build 시작 전 정상 작동이 가능한지 테스트를 진행하는 부분입니다.
-Build
--배포를 위해 빌드를 진행한 artifact를 산출해내는 부분입니다.
+Build -배포를 위해 빌드를 진행한 artifact를 산출해내는 부분입니다.
 Deploy
+
 - 빌드된 artifact를 불러와 배포를 진행하는 부분 입니다.
-stg-merge
+  stg-merge
 - dev에 배포된 내용의 merge를 수동 진행하도록 하는 부분입니다.
-pass-stg
+  pass-stg
 - prod 서버에 배포하는 내용을 수동으로 실시해주는 부분입니다.
-Merge
+  Merge
 - 배포가 완료된 후 git의 merge를 실행하는 부분입니다.
-Roll-back
+  Roll-back
 - 배포 후 문제가 발생시 이 직전의 버전으로 Roll-back이 진행되며 파이프라인은 종료됩니다.
-Close
+  Close
 - 정상적으로 완료 된후 티켓을 수동으로 종료해주는 부분입니다.
 
 ## McWrapper와 연동을 위한 변수들
