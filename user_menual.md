@@ -483,7 +483,7 @@ profile_active_prd: prd # production env active profile
 
 프로젝트 생성 후 프로젝트에 맞는 [파이프라인](#파이프라인)을 선택하고, [파이프라인 변수](#파이프라인-변수)를 설정해야 합니다.
 
-![파이프라인 선택 및 변수 등록](./assets/images/project_pipeline_setting.png)
+![파이프라인 선택 및 변수 등록](./assets/images/project_pipeline_setting.gif)
 
 - 프로젝트 등록시 데브옵스 엔지니어가 등록한 파이프라인을 프로젝트에 등록할 수 있습니다.
 - 프로젝트 리더를 PL 역할로 설정합니다.
