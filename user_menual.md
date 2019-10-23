@@ -485,110 +485,15 @@ profile_active_prd: prd # production env active profile
 
 ![파이프라인 선택 및 변수 등록](./assets/images/project_pipeline_setting.gif)
 
-- 프로젝트 등록시 데브옵스 엔지니어가 등록한 파이프라인을 프로젝트에 등록할 수 있습니다.
-- 프로젝트 리더를 PL 역할로 설정합니다.
-- 프로젝트의 개발자들을 Developers 역할로 설정합니다.
-- 워크스페이스의 QA 담당자들 중 프로젝트 전담 QA를 QA 역할로 설정합니다.
-- 워크스페이스의 배포 담당자들 중 프로젝트 전담 배포자를 Deployer 역할로 설정합니다.
-
-### 파이프라인 등록
-
-![Property-create](./assets/images/project_pipeline_setting.gif)
-
-- 프로젝트 생성 및 사용할 파이프라인 선택과 프로젝트에서 설정할 credential을 입력한다.
-
-  - credential에 입력할 git private key를 등록해야 되는데 SSH 키가 없다면 새로운 SSH 키 페어를 생성해야 합니다.
-    이제 Terminal을 열고 ssh를 만들어 보겠습니다.
-    먼저 ssh key를 생성하기 전에 이미 생성된 key가 있는지 확인해 보겠습니다.
-
-    ```
-    cd ~/.ssh
-    No such file or directory
-    ```
-
-    아직 한번도 ssh key를 생성하지 않은 상태입니다.
-    ssh key pair를 만들어 보겠습니다.
-
-    새로운 ED25519 SSH 키 쌍을 생성하십시오.
-
-    ```
-    ssh-keygen -t ed25519 -C "email@example.com"
-    ```
-
-    또는 RSA를 사용하려는 경우 :
-
-    ```
-    ssh-keygen -o -t rsa -b 4096 -C "email@example.com"
-    ```
-
-    이 -C플래그는 키가 여러 개이고 어느 것이 어떤 것인지 말하려는 경우 키에 주석을 추가합니다. 선택 사항입니다.
-
-    ```
-    Enter file in which to save the key (/Users/사용자이름/.ssh/id_ed25519):
-    Created directory '/Users/사용자이름/.ssh'.
-    ```
-
-    Enter file in which to save the key (/Users/사용자이름/.ssh/id_ed25519): 어디에 key를 만들지 묻습니다. 그냥 엔터를 처서 기본 위치에 기본 파일명으로 만들도록 합니다.
-    Enter passphrase (empty for no passphrase):
-    Enter same passphrase again: key에 대한 비밀번호를 만들라고 나오는데 보통 그냥 엔터를 처서 넘어갑니다.
-
-    그럼 키가 만들어지고 기본 위치(/Users/사용자이름/.ssh/id_ed25519)에 파일이 생성됩니다.
-    이제 생성이 되어 있는지 확인해 봅시다.
-
-    ```
-    cd ~/.ssh
-    ```
-
-    id_ed25519 id_ed25519.pub가 생성되어 있는 것을 확인할 수 있습니다.
-    이제 새로 생성 된 공개 키를 GitLab 계정에 추가 할 차례입니다.
-
-    운영 체제에 따라 아래 명령 중 하나를 사용 하여 공개 SSH 키를 클립 보드에 복사하십시오 .
-
-    ```
-    맥 OS:
-    pbcopy < ~/.ssh/id_ed25519.pub
-    ```
-
-    ```
-    WSL / GNU / Linux (xclip 패키지 필요) :
-    xclip -sel clip < ~/.ssh/id_ed25519.pub
-    ```
-
-    ```
-    Windows의 Git Bash :
-    cat ~/.ssh/id_ed25519.pub | clip
-    ```
-
-    그래픽 편집기에서 키를 열고 여기에서 복사 할 수도 있지만 실수로 아무 것도 변경하지 않도록 주의하십시오.
-    에디터에 ctrl+v 하면 복사된 private key 값이 나옵니다.
-
-  - Github, GitLab 계정에 SSH 키 추가
-    [Settings] --> [SSH and GPG keys] --> [New SSH key]를 클릭합니다.  
-    복사한 private key을 등록합니다.
-
-### Credentials 입력 예(vue)
-
-![project-pipeline-01](./assets/images/project-pipeline-reg.png)
-
-1. git_address(Git 주소)
-   ssh://로 시작되는 git 주소를 입력합니다.
-2. git_email(Git 계정 이메일 주소)
-   Git 계정 이메일 주소를 입력합니다.
-3. git_name(Git 계정)
-   Git 계정을 입력합니다.
-4. git_private_key
-   Github, GitLab 계정에 추가된 SSH 키를 복사합니다.
-
-![project-pipeline-private_key](./assets/images/project-pipeline-private_key.gif)  
-**git private key등록시 주의사항** (빨간 색 박스 처리된 부분을 보시면)
-
-- 첫 라인에 | 가 들어가야 되고
-- indent 1번 들어 가야 됩니다.
-
-5. profile_active_dev,
-6. profile_active_prd,
-7. profile_active_stg 는  
-   각각 development, production, staging을 넣어주면 됩니다. [vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
+> 파이프라인 변수 입력 예(Vue 파이프라인)
+>
+> ![project-pipeline-01](./assets/images/project-pipeline-reg.png)
+>
+> 1. git_address(Git 주소): ssh://로 시작되는 git 주소를 입력합니다.
+> 2. git_email(Git 계정 이메일 주소): Git 계정 이메일 주소를 입력합니다.
+> 3. git_name(Git 계정): Git 계정을 입력합니다.
+> 4. git_private_key: Git 계정에 등록된 SSH Key를 입력합니다. ([SSH Key 등록 방법 참조](./ssh_key_register.md))
+> 5. profile_active_dev, profile_active_prd, profile_active_stg 는 각각 배포 환경에 따라 적용될 profile 값을 넣어주면 됩니다. [Vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
 
 ## 요청자(Requester)
 
