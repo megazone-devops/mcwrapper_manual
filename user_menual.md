@@ -485,7 +485,7 @@ profile_active_prd: prd # production env active profile
 
 ![파이프라인 선택 및 변수 등록](./assets/images/project_pipeline_setting.gif)
 
-> 파이프라인 변수 입력 예(Vue 파이프라인)
+> **파이프라인 변수 입력 예(Vue 파이프라인)**
 >
 > ![project-pipeline-01](./assets/images/project-pipeline-reg.png)
 >
@@ -493,7 +493,7 @@ profile_active_prd: prd # production env active profile
 > 2. git_email(Git 계정 이메일 주소): Git 계정 이메일 주소를 입력합니다.
 > 3. git_name(Git 계정): Git 계정을 입력합니다.
 > 4. git_private_key: Git 계정에 등록된 SSH Key를 입력합니다. ([SSH Key 등록 방법 참조](./ssh_key_register.md))
-> 5. profile_active_dev, profile_active_prd, profile_active_stg 는 각각 배포 환경에 따라 적용될 profile 값을 넣어주면 됩니다. [Vue cli 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
+> 5. profile_active_dev, profile_active_prd, profile_active_stg 는 각각 배포 환경에 따라 적용될 profile 값을 넣어주면 됩니다. [Vue CLI 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
 
 ## 요청자(Requester)
 
