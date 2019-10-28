@@ -453,15 +453,18 @@ profile_active_prd: prd # production env active profile
 
 워크스페이스 관리자는 [워크스페이스](#워크스페이스) 생성 권한을 가집니다.
 
-워크스페이스를 생성합니다
+워크스페이스를 생성합니다.
+
 [![워크스페이스 생성](./assets/images/workspace_manager_01.gif)](./assets/videos/workspace_manager_01.mp4)
 - 워크스페이스 이름은 oo회사 개발부서로 지어줬습니다. 
 - 하단에 Create 버튼을 눌러줍니다.
 
 워크스페이스를 생성 후 구성원을 추가하여 줍니다.
+
 [![워크스페이스 구성원 관리](./assets/images/workspace_manager_02.gif)](./assets/videos/workspace_manager_02.mp4)
 
 각 권한 그룹에 해당 사용자들을 추가하여 줍니다.
+
 [![워크스페이스 그룹별 구성원 관리](./assets/images/workspace_manager_03.gif)](./assets/videos/workspace_manager_03.mp4)
 
 ## 프로퍼티 관리자(Property Managers)
@@ -470,7 +473,8 @@ profile_active_prd: prd # production env active profile
 
 프로퍼티 관리자는 [프로퍼티](#프로퍼티)를 생성할 수 있습니다.
 
-프로퍼티를 생성합니다
+프로퍼티를 생성합니다.
+
 [![프로퍼티 생성](./assets/images/property_manager_01.gif)](./assets/videos/property_manager_01.mp4)
 - 프로퍼티 이름은 A사이트로 지어줬습니다. 
 - 코드는 유니크한 코드를 적어줍니다. 
@@ -485,7 +489,8 @@ profile_active_prd: prd # production env active profile
 
 프로젝트 관리자는 [프로젝트](#프로젝트)를 생성할 수 있습니다.
 
-프로젝트 생성합니다
+프로젝트 생성합니다.
+
 [![프로젝트 생성](./assets/images/project_manager_01.gif)](./assets/videos/project_manager_01.mp4)
 - 프로젝트 이름은 홈페이지 운영으0로 지어줬습니다. 
 - 코드는 유니크한 코드를 적어줍니다. 
