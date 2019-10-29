@@ -293,7 +293,7 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
   - Default pipeline variable settings: 자주 사용되는 [파이프라인 변수](#파이프라인-변수)를 관리합니다.
   - Manage pipelines: [파이프라인](#파이프라인)을 관리합니다.
 - Support
-  - User Guide: McWrapper의 사용자 메뉴얼 
+  - User Guide: McWrapper의 사용자 메뉴얼
 - 상단 메뉴(GNB)
   - Home: 사이트의 메인 페이지로 이동합니다.
   - Notifications: 나에게 도착한 알림 메시지를 조회하고, 클릭하여 관리화면으로 이동하는 인터페이스를 제공합니다.
@@ -447,17 +447,11 @@ profile_active_prd: prd # production env active profile
 
 복사한 후 변경되어야 할 내용만 수정하면 됩니다.
 
-##지스 관리자(Workspace Managers)
+## 워크스페이스 관리자(Workspace Managers)
 
-워크스페이스 관리자는 사이트 관리자에 의해 권한을 부여받습니다. ([사이트 관리자 참조](#그룹-관리-&-권한관리))
-
-워크스페이스 관리자는 [워크스페이스](#워크스페이스) 생성 권한을 가집니다.
-
-워크스페이스를 생성합니다.
+워크스페이스 관리자는 사이트 관리자로부터 [워크스페이스](#워크스페이스) 생성 권한을 부여받습니다. ([사이트 관리자 참조](#그룹-관리-&-권한관리))
 
 [![워크스페이스 생성](./assets/images/workspace_manager_01.gif)](./assets/videos/workspace_manager_01.mp4)
-- 워크스페이스 이름은 oo회사 개발부서로 지어줬습니다. 
-- 하단에 Create 버튼을 눌러줍니다.
 
 워크스페이스를 생성 후 구성원을 추가하여 줍니다.
 
@@ -469,32 +463,19 @@ profile_active_prd: prd # production env active profile
 
 ## 프로퍼티 관리자(Property Managers)
 
-프로퍼티 관리자는 [워크스페이스 관리자](<#워크스페이스-관리자(Workspace-Managers)>)로부터 권한을 부여받습니다.
-
-프로퍼티 관리자는 [프로퍼티](#프로퍼티)를 생성할 수 있습니다.
-
-프로퍼티를 생성합니다.
+프로퍼티 관리자는 [워크스페이스 관리자](<#워크스페이스-관리자(Workspace-Managers)>)로부터 권한을 부여받아 [프로퍼티](#프로퍼티)를 생성할 수 있습니다.
 
 [![프로퍼티 생성](./assets/images/property_manager_01.gif)](./assets/videos/property_manager_01.mp4)
-- 프로퍼티 이름은 A사이트로 지어줬습니다. 
-- 코드는 유니크한 코드를 적어줍니다. 
-- 하단에 Create 버튼을 눌러줍니다.
 
 프로퍼티를 생성후 [데브데스크](<#데브데스크(DevDesk)>) 및 [요청자](<#요청자(Requester)>) 권한 그룹에 해당 사용자들을 추가하여 줍니다.
+
 [![프로퍼티 그룹별 구성원 관리](./assets/images/property_manager_02.gif)](./assets/videos/property_manager_02.mp4)
 
 ## 프로젝트 관리자(Project Managers)
 
-프로젝트 관리자는 [워크스페이스 관리자](<#워크스페이스-관리자(Workspace-Managers)>)로부터 권한을 부여받습니다.
-
-프로젝트 관리자는 [프로젝트](#프로젝트)를 생성할 수 있습니다.
-
-프로젝트 생성합니다.
+프로젝트 관리자는 [워크스페이스 관리자](<#워크스페이스-관리자(Workspace-Managers)>)로부터 권한을 부여받아 [프로젝트](#프로젝트)를 생성할 수 있습니다.
 
 [![프로젝트 생성](./assets/images/project_manager_01.gif)](./assets/videos/project_manager_01.mp4)
-- 프로젝트 이름은 홈페이지 운영으0로 지어줬습니다. 
-- 코드는 유니크한 코드를 적어줍니다. 
-- 하단에 Create 버튼을 눌러줍니다.
 
 프로젝트 생성 후 프로젝트에 맞는 [파이프라인](#파이프라인)을 선택하고, [파이프라인 변수](#파이프라인-변수)를 설정해야 합니다.
 
