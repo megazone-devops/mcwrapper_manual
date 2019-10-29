@@ -493,11 +493,21 @@ profile_active_prd: prd # production env active profile
 
 ## 요청자(Requester)
 
-![Property-create](./assets/images/create-storybook.gif)
+요청자는 [프로퍼티 관리자](<#프로퍼티-관리자(Property-Managers)>)로부터 권한을 부여받습니다.
 
-- 스토리북을 생성할 수 있습니다.
-- 유저스토리에 프로젝트를 매핑한다.
-- 유저스토리에 매핑된 프로젝트의 릴리즈 티켓을 선택한다.
+요청자는 업무 담당자들의 다양한 개발 요건들을 모아 스토리북을 작성합니다.
+
+[![스토리북 생성](./assets/images/requester_01.gif)](./assets/videos/requester_01.mp4)
+
+스토리북은 상세 요건인 [유저 스토리](#유저-스토리)를 복수로 가집니다.
+
+[유저 스토리](#유저-스토리)는 [데브데스크](<#데브데스크(DevDesk)>)가 요건에 해당하는 [프로젝트](#프로젝트)를 분류하고, [PL](<#PL(Project-Leader)>)에 의해 릴리즈 티켓에 1:1로 연결되어 실제로 상세 요건이 개발, [배포](#배포)되는 과정을 지켜볼 수 있습니다.
+
+## 데브데스크(DevDesk)
+
+![Property-create](./assets/images/devdesk-project-mapping.gif)
+
+- 유저스토리에 프로젝트를 매핑할 수 있습니다.
 
 ## 워크스페이스에 속한 모든 멤버(Workspace Member)
 
@@ -519,12 +529,6 @@ profile_active_prd: prd # production env active profile
 ## 개발자(Developers)
 
 - 할당된 티켓을 확인합니다.
-
-## 데브데스크(DevDesk)
-
-![Property-create](./assets/images/devdesk-project-mapping.gif)
-
-- 유저스토리에 프로젝트를 매핑할 수 있습니다.
 
 ## 검수 담당자(Quality Assurance)
 
