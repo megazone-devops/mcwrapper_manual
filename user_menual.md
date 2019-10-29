@@ -503,6 +503,8 @@ profile_active_prd: prd # production env active profile
 
 [유저 스토리](#유저-스토리)는 [데브데스크](<#데브데스크(DevDesk)>)가 요건에 해당하는 [프로젝트](#프로젝트)를 분류하고, [PL](<#PL(Project-Leader)>)에 의해 릴리즈 티켓에 1:1로 연결되어 실제로 상세 요건이 개발, [배포](#배포)되는 과정을 지켜볼 수 있습니다.
 
+![개발 진행중인 스토리북](./assets/images/requester_02.png)
+
 ## 데브데스크(DevDesk)
 
 ![Property-create](./assets/images/devdesk-project-mapping.gif)
