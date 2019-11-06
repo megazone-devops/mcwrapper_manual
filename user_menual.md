@@ -545,6 +545,12 @@ PL은 [데브데스크](<#데브데스크(DevDesk)>)가 스토리북에 자신�
 
 [배포](#배포)된 소프트웨어에 문제가 있을 경우 [롤백](#롤백) 여부를 결정하기도 합니다.
 
+# 릴리즈 티켓 Flow
+
+![릴리즈 티켓 흐름도](./assets/images/McWrapper_Release_Ticket_Flow.png)
+
+![릴리즈 티켓 상태 명세서](./assets/images/McWrapper_Release_Ticket_Status_Speccification.png)
+
 # 파이프라인 작성 방법
 
 ## McWrapper 구조
