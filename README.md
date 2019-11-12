@@ -1,6 +1,3 @@
-# MC Wrapper 2.x Manual
-Megazone Cloud DevOps팀에서 개발한 솔루션인 MC Wrapper 2.x의 매뉴얼을 작성하기 위한 저장소입니다.
-
 # 제품 소개
 
 McGaudi는 업무 프로세스와 도구 등을 DevOps 관점에서
@@ -40,3 +37,10 @@ Well-made CI/CD pipeline template을 통해 간단한정보 입력만으로도 �
 ### McWrapper?
 
 McWrapper는 사용자에게 개발 업무 결재 프로 세스를 확인 및 요청/처리 등을 하는 창구 역할을 합니다. 이 해당 창구를 통해 McGaiver의 CI/CD Pipeline를 기반으로 개발/배포 시스템을 자동으로 처리 합니다.
+
+
+# 메뉴얼 바로가기 
+
+- [운영자 메뉴얼 바로가기](https://github.com/megazone-devops/mcwrapper_menual/blob/master/operator_manual.md)
+
+- [사용자 메뉴얼 바로가기](https://github.com/megazone-devops/mcwrapper_menual/blob/master/user_menual.md)
