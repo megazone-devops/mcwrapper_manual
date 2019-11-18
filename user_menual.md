@@ -241,22 +241,22 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
 ![GNB - 02](./assets/images/menu_desc_gnb02.png)
 
 - 관리자(Administrator)
-  - 그룹 관리(Manage groups): [그룹](#그룹)을 관리하고, [구성원](#구성원)을 추가하거나 제외시킵니다.
+  - 그룹 관리(Manage groups): [그룹](#그룹)을 관리하고, [구성원](#구성원)을 추가하거나 제외합니다.
   - 권한 관리(manage permissions): 권한에 [그룹](#그룹)을 할당하거나 조회합니다.
   - 사용자 관리(Manage users): [사용자](#사용자)를 관리하고, 조회합니다.
-  - 초대 관리(Manage guests): 초대메일을 전송/재전송하고, 초대 정보를 관리합니다.
+  - 초대자 관리(Manage guests): 초대 메일을 전송/재전송하고, 초대 정보를 관리합니다.
 - 사용자(User)
-  - Workspace: [워크스페이스](#워크스페이스) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
-  - Property: [프로퍼티](#프로퍼티) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
-  - Project: [프로젝트](#프로젝트) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
+  - 워크스페이스(Workspace): [워크스페이스](#워크스페이스) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
+  - 프로퍼티(Property): [프로퍼티](#프로퍼티) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
+  - 프로젝트(Project): [프로젝트](#프로젝트) 목록이 출력됩니다. 관리자 권한이 있으면, 우측에 Management 메뉴가 보입니다.
 - 데브옵스(DevOps)
-  - Default pipeline variable settings: 자주 사용되는 [파이프라인 변수](#파이프라인-변수)를 관리합니다.
-  - Manage pipelines: [파이프라인](#파이프라인)을 관리합니다.
+  - 기본 파이프라인 변수 설정(Default pipeline variable settings): 자주 사용되는 [파이프라인 변수](#파이프라인-변수)를 관리합니다.
+  - 파이프라인 관리(Manage pipelines): [파이프라인](#파이프라인)을 관리합니다.
 - Support
-  - User Guide: McWrapper의 사용자 메뉴얼
+  - 사용자 도움말(User Guide): McWrapper의 사용자 매뉴얼
 - 상단 메뉴(GNB)
   - Home: 사이트의 메인 페이지로 이동합니다.
-  - Notifications: 나에게 도착한 알림 메시지를 조회하고, 클릭하여 관리화면으로 이동하는 인터페이스를 제공합니다.
+  - 알림(Notifications): 나에게 도착한 알림 메시지를 조회하고, 클릭하여 관리 화면으로 이동하는 인터페이스를 제공합니다.
   - Create ...: 생성 권한이 있는 [워크스페이스](#워크스페이스), [프로퍼티](#프로퍼티), [프로젝트](#프로젝트), [스토리북](#스토리북), [릴리즈 티켓](#릴리즈-티켓)을 생성합니다.
   - Profile: [사용자](#사용자) 정보를 조회하고, 수정합니다.
 
@@ -270,7 +270,7 @@ CI와 CD가 수행되는 절차를 정의하고 정의된 절차에 맞춰 자�
 
 [![회원 가입](./assets/images/join.gif)](./assets/videos/join.mp4)
 
-링크를 클릭하여 페이지 이동 후 원하는 가입 방법을 선택 해 사용자 정보를 입력하시면 됩니다.
+링크를 클릭하여 페이지 이동 후 원하는 가입 방법을 선택해 사용자 정보를 입력하시면 됩니다.
 
 ### 로그인
 
@@ -303,52 +303,50 @@ McWrapper는 다양한 방식의 로그인을 지원 할 예정입니다.(현재
 10. 메인 페이지로 이동합니다.
 11. 페이지의 타이틀이 표시됩니다.
 12. 페이지를 리로드 합니다.
-13. 옵션 기능이 있는경우 표시됩니다.
+13. 옵션 기능이 있는 경우 표시됩니다.
 
 ## 사이트 관리자(Administrators)
 
-사이트 관리자 권한은 시스템이 설치된 후 첫번째 로그인한 사용자에게 부여됩니다.
+사이트 관리자 권한은 시스템이 설치된 후 첫 번째 로그인한 사용자에게 부여됩니다.
 
 [![사이트 관리자](./assets/images/administrator_01.gif)](./assets/videos/administrator_01.mp4)
 
 ### 사용자 초대
 
-초대 관리 메뉴에서 이메일 주소를 이용하여 사용자를 초대 할 수 있습니다.
+초대 관리 메뉴에서 이메일 주소를 이용하여 사용자를 초대할 수 있습니다.
 
 [![사용자 초대](./assets/images/invite_users_01.gif)](./assets/videos/invite_users_01.mp4)
 
-여러 사람을 동시에 초대 할 수 있고, 초대와 동시에 가입 시 소속될 그룹이나 워크스페이스를 미리 지정 할 수도 있습니다.
+여러 사람을 동시에 초대할 수 있고, 초대와 동시에 가입 시 소속될 그룹이나 워크스페이스를 미리 지정할 수도 있습니다.
 
 [![사용자 그룹 초대](./assets/images/invite_users_02.gif)](./assets/videos/invite_users_02.mp4)
 
-이미 초대된 사용자에게 초대 메일을 재발송 하거나 초대정보를 삭제 할 수 있습니다.
+이미 초대된 사용자에게 초대 메일을 재발송 하거나 초대 정보를 삭제할 수 있습니다.
 
 [![초대 메일 재발송](./assets/images/invite_users_03.gif)](./assets/videos/invite_users_03.mp4)
 
-초대정보가 삭제된 사용자는 메일의 링크를 통해 가입을 시도하더라도 가입이 불가합니다.
+초대 정보가 삭제된 사용자는 메일의 링크를 통해 가입을 시도하더라도 가입이 불가합니다.
 
-### 그룹 관리 & 권한관리
+### 그룹 관리 & 권한 관리
 
 시스템에 미리 정의된 그룹들이 존재합니다. 이 그룹들은 삭제가 불가합니다.
 
 - Administrators: 사이트의 관리자 그룹입니다.
-- DevOps: DevOps 메뉴에 접근권한을 가지는 그룹입니다.
+- DevOps: DevOps 메뉴에 접근 권한을 가지는 그룹입니다.
 - WorkspaceManagers: [워크스페이스](#워크스페이스) 생성 권한을 가지는 그룹입니다.
 - Users: 가입된 후 사용자들이 속하게 되는 기본 그룹. 다른 그룹에 소속되면 제외됩니다.
 
-시스템에서 관리되는 그룹들과 별도로 커스텀 그룹을 만들고, 사용자를 추가 할 수 있습니다.
+시스템에서 관리되는 그룹들과 별도로 커스텀 그룹을 만들고, 사용자를 추가할 수 있습니다.
 
 [![커스텀 그룹 생성](./assets/images/create_group.gif)](./assets/videos/create_group.mp4)
 
-커스텀 그룹을 통해 쉽고, 빠르게 사용자들의 권한을 관리 할 수 있습니다.
-
-예를들어, DevOps 엔지니어가 아닌 PL의 경우 DevOps 엔지니어들이 만들어 놓은 파이프라인을 조회하여 참고할 필요가 있는데 이때 PL 그룹을 만들고, 해당 사용자들을 추가한 후 DevOps > Pipeline view 권한을 PL 그룹에 부여하면 PL 그룹에 소속된 구성원들은 파이프라인의 조회가 가능 해 집니다.
+커스텀 그룹을 통해 쉽고, 빠르게 사용자들의 권한을 관리할 수 있습니다.
 
 ### 권한 관리
 
 미리 정의되어 있는 권한에 그룹을 연결하여 사용자에게 권한을 부여합니다.
 
-예를들어, DevOps 엔지니어가 아닌 PL의 경우 DevOps 엔지니어들이 만들어 놓은 파이프라인을 조회하여 참고할 필요가 있는데 이때 PL 그룹을 만들고, 해당 사용자들을 추가한 후 DevOps > Pipeline view 권한을 PL 그룹에 부여하면 PL 그룹에 소속된 구성원들은 파이프라인의 조회가 가능 해 집니다.
+예를 들어, DevOps 엔지니어가 아닌 PL의 경우 DevOps 엔지니어들이 만들어 놓은 파이프라인을 조회하여 참고할 필요가 있는데 이때 PL 그룹을 만들고, 해당 사용자들을 추가한 후 DevOps > Pipeline view 권한을 PL 그룹에 부여하면 PL 그룹에 소속된 구성원들은 파이프라인의 조회가 가능해집니다.
 
 [![커스텀 그룹 활용](./assets/images/group_permission.gif)](./assets/videos/group_permission.mp4)
 
@@ -360,13 +358,13 @@ Manage pipelines 메뉴에서 파이프라인 템플릿을 작성하고, 약속�
 
 ### Default pipeline variable settings
 
-Default pipeline variable settings 메뉴에서는 자주 사용되고, 개인정보가 아닌(ex. 이메일 주소, 패스워드 등) [파이프라인 변수](#파이프라인-변수)들의 값을 미리 설정 해 놓을 수 있습니다.
+Default pipeline variable settings 메뉴에서는 자주 사용되고, 개인 정보가 아닌(ex. 이메일 주소, 패스워드 등) [파이프라인 변수](#파이프라인-변수)들의 값을 미리 설정해 놓을 수 있습니다.
 
-예를들어, [빌드](#빌드)된 [산출물](#산출물)을 팀 또는 사내에서 운영하는 Docker Registry에 Push 하는 프로세스가 파이프라인에 자주 사용된다면 Docker Registry 주소나 계정 정보를 반복적으로 입력해야 합니다.
+예를 들어, [빌드](#빌드) 된 [산출물](#산출물)을 팀 또는 사내에서 운영하는 Docker Registry에 Push 하는 프로세스가 파이프라인에 자주 사용된다면 Docker Registry 주소나 계정 정보를 반복적으로 입력해야 합니다.
 
-이때, Default pipeline variable settings 메뉴에 [파이프라인 변수](#파이프라인-변수)로 등록 해 놓으면 [파이프라인 변수](#파이프라인-변수) 등록 시 자동으로 입력되기 때문에 [프로젝트](#프로젝트) 마다 일일이 등록하지 않아도 됩니다.
+이때, Default pipeline variable settings 메뉴에 [파이프라인 변수](#파이프라인-변수)로 등록해 놓으면 [파이프라인 변수](#파이프라인-변수) 등록 시 자동으로 입력되기 때문에 [프로젝트](#프로젝트)마다 일일이 등록하지 않아도 됩니다.
 
-또, 1Depth YAML 형태로 한번에 [파이프라인 변수](#파이프라인-변수)를 등록하는 편의 기능도 제공이 됩니다.
+또, 1Depth YAML 형태로 한 번에 [파이프라인 변수](#파이프라인-변수)를 등록하는 편의 기능도 제공이 됩니다.
 
 ```yml
 docker_registry_adderess: registry.mycorporation.com # Docker Registry Address
@@ -377,7 +375,7 @@ profile_active_prd: prd # production env active profile
 
 [![기본 파이프라인 변수 등록 - 01](./assets/images/default_pipeline_variable_01.gif)](./assets/videos/default_pipeline_variable_01.mp4)
 
-[파이프라인 변수](#파이프라인-변수)를 등록한 후 패스워드와 같이 노출 되면 안되는 값들은 마스킹 처리를 하여 줍니다.
+[파이프라인 변수](#파이프라인-변수)를 등록한 후 패스워드와 같이 노출되면 안 되는 값들은 마스킹 처리를 하여 줍니다.
 
 실제 데이터에는 마스킹 여부와 상관없이 모두 암호화됩니다.
 
@@ -397,13 +395,13 @@ profile_active_prd: prd # production env active profile
 
 파이프라인에 등록된 [변수](#파이프라인-변수)들의 값과 마스킹 여부, [프로젝트](#프로젝트)에서 수정 가능 여부를 설정합니다.
 
-수정 불가로 설정 할 경우 프로젝트 파이프라인 설정 화면에서는 해당 변수는 출력되지 않습니다. 그렇기 때문에 수정 불가로 설정 할 경우 반드시 값이 있어야 합니다.
+수정 불가로 설정할 경우 프로젝트 파이프라인 설정 화면에서는 해당 변수는 출력되지 않습니다. 그렇기 때문에 수정 불가로 설정할 경우 반드시 값이 있어야 합니다.
 
 개발된 소스코드가 있는 GIT 저장소의 주소처럼 프로젝트별로 다르게 설정되어야 할 변수들은 수정 가능으로 설정하면 됩니다.
 
 [![파이프라인 템플릿 관리 - 03](./assets/images/manage_pipeline_03.gif)](./assets/videos/manage_pipeline_03.mp4)
 
-새로 만드려고 하는 파이프라인과 비슷한 파이프라인이 이미 존재할 경우 복사 기능을 활용할 수 있습니다.
+새로 만들려고 하는 파이프라인과 비슷한 파이프라인이 이미 존재할 경우 복사 기능을 활용할 수 있습니다.
 
 복사한 후 변경되어야 할 내용만 수정하면 됩니다.
 
@@ -427,7 +425,7 @@ profile_active_prd: prd # production env active profile
 
 [![프로퍼티 생성](./assets/images/property_manager_01.gif)](./assets/videos/property_manager_01.mp4)
 
-프로퍼티를 생성후 [데브데스크](<#데브데스크(DevDesk)>) 및 [요청자](<#요청자(Requester)>) 권한 그룹에 해당 사용자들을 추가하여 줍니다.
+프로퍼티를 생성 후 [데브데스크](#데브데스크DevDesk) 및 [요청자](<#요청자(Requester)>) 권한 그룹에 해당 사용자들을 추가하여 줍니다.
 
 [![프로퍼티 그룹별 구성원 관리](./assets/images/property_manager_02.gif)](./assets/videos/property_manager_02.mp4)
 
@@ -449,7 +447,7 @@ profile_active_prd: prd # production env active profile
 > 2. git_email(Git 계정 이메일 주소): Git 계정 이메일 주소를 입력합니다.
 > 3. git_name(Git 계정): Git 계정을 입력합니다.
 > 4. git_private_key: Git 계정에 등록된 SSH Key를 입력합니다. ([SSH Key 등록 방법 참조](./ssh_key_register.md))
-> 5. profile_active_dev, profile_active_prd, profile_active_stg 는 각각 배포 환경에 따라 적용될 profile 값을 넣어주면 됩니다. [Vue CLI 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
+> 5. profile_active_dev, profile_active_prd, profile_active_stg는 각각 배포 환경에 따라 적용될 profile 값을 넣어주면 됩니다. [Vue CLI 가이드 참고](https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code)
 
 ## 요청자(Requester)
 
@@ -461,13 +459,13 @@ profile_active_prd: prd # production env active profile
 
 스토리북은 상세 요건인 [유저 스토리](#유저-스토리)를 복수로 가집니다.
 
-[유저 스토리](#유저-스토리)는 [데브데스크](<#데브데스크(DevDesk)>)가 요건에 해당하는 [프로젝트](#프로젝트)를 분류하고, [PL](<#PL(Project-Leader)>)에 의해 릴리즈 티켓에 1:1로 연결되어 실제로 상세 요건이 개발, [배포](#배포)되는 과정을 지켜볼 수 있습니다.
+[유저 스토리](#유저-스토리)는 [데브데스크](#데브데스크DevDesk)가 요건에 해당하는 [프로젝트](#프로젝트)를 분류하고, [PL](<#PL(Project-Leader)>)에 의해 릴리즈 티켓에 1:1로 연결되어 실제로 상세 요건이 개발, [배포](#배포)되는 과정을 지켜볼 수 있습니다.
 
 ![개발 진행중인 스토리북](./assets/images/requester_02.png)
 
 ## 데브데스크(DevDesk)
 
-데브데스크는 [요청자](<#요청자(Requester)>)가 만든 스토리북(#스토리북)의 다양한 요건(유저 스토리)들을 해당 [프로젝트](#프로젝트)에 연결시키는 역할을 합니다.
+데브데스크는 [요청자](<#요청자(Requester)>)가 만든 스토리북(#스토리북)의 다양한 요건(유저 스토리)들을 해당 [프로젝트](#프로젝트)에 연결하는 역할을 합니다.
 
 그렇기 때문에 각 요건들이 어떤 프로젝트와 연관성이 있는지 잘 파악하고 있는 사람이 맡아야만 합니다.
 
@@ -475,11 +473,11 @@ profile_active_prd: prd # production env active profile
 
 ## PL(Project Leader)
 
-PL은 [데브데스크](<#데브데스크(DevDesk)>)가 스토리북에 자신의 프로젝트를 연결시키면 해당 요건이 반영 될 [릴리즈](#릴리즈) 계획에 따라 [릴리즈 티켓](#릴리즈-티켓)을 선택하여 연결시킵니다.
+PL은 [데브데스크](#데브데스크DevDesk)가 스토리북에 자신의 프로젝트를 연결하면 해당 요건이 반영될 [릴리즈](#릴리즈) 계획에 따라 [릴리즈 티켓](#릴리즈-티켓)을 선택하여 연결합니다.
 
 ![스토리북-릴리즈 티켓 연결](./assets/images/storybook_mapping_and_release_ticket.gif)
 
-만약 기존에 만들어진 [릴리즈 티켓](#릴리즈-티켓)의 [배포](#배포) 버전에 포함하지 못한다면 새로운 [릴리즈 티켓](#릴리즈-티켓)을 만들어 연결시킬 수 있습니다.
+만약 기존에 만들어진 [릴리즈 티켓](#릴리즈-티켓)의 [배포](#배포) 버전에 포함하지 못한다면 새로운 [릴리즈 티켓](#릴리즈-티켓)을 만들어 연결할 수 있습니다.
 
 ![릴리즈 티켓 설계 단계](./assets/images/pl_02.png)
 
@@ -487,7 +485,7 @@ PL은 [데브데스크](<#데브데스크(DevDesk)>)가 스토리북에 자신�
 
 ![릴리즈 티켓 PL 승인 단계](./assets/images/pl_03.png)
 
-동일한 프로젝트 내에서 [릴리즈](#릴리즈)가 2건이상 동시에 진행될 경우 Staging 환경에는 하나의 산출물(Artifact)만 배포가 되기 때문에 어떤 [릴리즈 티켓](#릴리즈-티켓)을 진행시킬지 PL이 판단하여 승인절차를 거치게 됩니다.
+동일한 프로젝트 내에서 [릴리즈](#릴리즈)가 2건 이상 동시에 진행될 경우 Staging 환경에는 하나의 산출물(Artifact)만 배포가 되기 때문에 어떤 [릴리즈 티켓](#릴리즈-티켓)을 진행시킬지 PL이 판단하여 승인 절차를 거치게 됩니다.
 
 먼저 Staging 환경에 [배포](#배포)되었던 [릴리즈 티켓](#릴리즈-티켓)은 Dev Testing 단계로 자동으로 변경됩니다.
 
@@ -521,7 +519,7 @@ pipeline.yml 파일은 크게 Resources 부분과 Jobs 부분으로 구성되어
 
 ### Resources
 
-[Job](#Jobs)에서 사용 할 resource를 정의합니다.
+[Job](#Jobs)에서 사용할 resource를 정의합니다.
 
 주로 특정 데이터를 불러오는 resource와 작업한 [산출물](#산출물)을 [배포](#배포)하는 resource로 구성되어 있습니다.
 
@@ -529,12 +527,12 @@ pipeline.yml 파일은 크게 Resources 부분과 Jobs 부분으로 구성되어
 
 ![Job](./assets/images/write_pipeline02.png)
 
-분리된 하나의 실행 단위 입니다. Aggregate, Task, Put순으로 실행됩니다
+분리된 하나의 실행 단위입니다. Aggregate, Task, Put 순으로 실행됩니다
 
 - **Aggregate**
   Task에서 사용할 resource를 불러옵니다.
-  - passed: 현재의 Job이 어떤 Job이후에 실행될지 정의합니다.
-  - trigger: 연결된 resource가 완료 될 시 자동으로 현재의 Job이 실행됩니다.
+  - passed: 현재의 Job이 어떤 Job 이후에 실행될지 정의합니다.
+  - trigger: 연결된 resource가 완료될 시 자동으로 현재의 Job이 실행됩니다.
 - **Task**
   Job에서의 실행 환경과 source들을 가져올 수 있으며, CLI 명령어를 실행시킬 수 있습니다.
 - **Put**
