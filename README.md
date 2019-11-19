@@ -40,6 +40,6 @@ McWrapper는 사용자에게 개발 업무 결재 프로 세스를 확인 및 �
 
 # 매뉴얼 바로가기
 
-- [운영자 매뉴얼 바로가기](https://github.com/megazone-devops/mcwrapper_menual/blob/master/operator_manual.md)
+- [운영자 매뉴얼 바로가기](https://github.com/megazone-devops/mcwrapper_manual/blob/master/operator_manual.md)
 
-- [사용자 매뉴얼 바로가기](https://github.com/megazone-devops/mcwrapper_menual/blob/master/user_menual.md)
+- [사용자 매뉴얼 바로가기](https://github.com/megazone-devops/mcwrapper_manual/blob/master/user_manual.md)
