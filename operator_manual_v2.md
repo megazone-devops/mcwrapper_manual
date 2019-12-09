@@ -25,21 +25,57 @@
 
 ![Architecture](./assets/images/install_arch.png)
 
-#### Application Area
-- Front - 화면 구성 및 GUI 처리 전담
-  > **Runtime Options**
-  >
-  > 설정이 필요한 내용을 작성해 주세요.
+#### Application Area 
+- Front - McWrapper 화면 구성 및 GUI 처리
+  > **$MC_WRAPPER_PACKAGE_INSTALL_PATH/docker-compose.yml**
+  >```
+  > mc-wrapper-vue:
+  >  image: registry.mzdev.kr/mc_wrapper/wrapper-app-vue:1.0.0-RELEASE-wonderplace
+  >  container_name: mc-wrapper-app-vue
+  >  ports:
+  >    - "80:80"
+  > ```
+  > - image: DockerRegistry 에 저장되어 있는 지정된 Front 용 Image 명과 Tag 명을 작성한다. 
+  > - port: 클라이언트에서 브라우져를 사용하여 접근할 포트 주소를 작성한다.
 
-- BackEnd - 백엔드 API 처리 전담
-  > **Runtime Options**
-  >
-  > 설정이 필요한 내용을 작성해 주세요.
+- BackEnd - Front 에서 호출하는 API 처리
+  > **$MC_WRAPPER_PACKAGE_INSTALL_PATH/docker-compose.yml**
+  >```
+  >mc-wrapper-md-monolithic:
+  >  image: registry.mzdev.kr/mc_wrapper/54-mon:1.3.0-RELEASE
+  >  container_name: mc-wrapper-md-monolithic
+  >  ports:
+  >    - "8080:8080"
+  >  environment:
+  >    - JAVA_OPTS=-Dserver.port=8080
+  >  volumes:
+  >    - ./config:/app/config
+  >  restart: always
+  >```
+  > - image: DockerRegistry 에 저장되어 있는 지정된 BackEnd 용 Image 명과 Tag 명을 작성한다.
+  > - port: BackEnd API 호출시 사용할 Port 번호를 지정한다.
+  > - environment: 어플리케이션 기동시 전달할 JAVA 환경변수를 지정한다.
+  > - volumes: 어플리케이션에서 사용할 Config 파일 경로를 지정한다.
 
-- DBMS - 비 휘발성 데이터 저장 전담
-  > **Runtime Options**
-  >
-  > 설정이 필요한 내용을 작성해 주세요.
+- DBMS - 비 휘발성 데이터 저장 (별도 DBMS 서버 사용시 생략 가능)
+  > **$MC_WRAPPER_PACKAGE_INSTALL_PATH/docker-compose.yml**
+  > ```
+  >  mariadb:
+  >  image: mariadb:10.2.15
+  >  container_name: mariadb
+  >  ports:
+  >    - "3306:3306"
+  >  volumes:
+  >   - ./mariadb:/var/lib/mysql
+  >  environment:
+  >    - MYSQL_ROOT_PASSWORD=password
+  >    - MYSQL_USER=user
+  >    - MYSQL_PASSWORD=password
+  > ```
+  > - image: DockerRegistry 에 저장되어 있는 지정된 Mariadb Image 명과 Tag 명을 작성한다.
+  > - port: BackEnd 에서 DBMS 연결시 사용할 Port 번호를 지정한다.
+  > - volumes: Docker 컨테이너 다운시에도 저장된 데이터를 유지키시기 위하여 local 경로를 지정해 준다.
+  > - environment: mariadb 관리자 계정 정보를 지정해 준다.
 
 - MessageQueue - 어플리케이션 간 메세지 전달 전담
 
@@ -73,7 +109,6 @@
   > **Runtime Options**
   >
   > 설정이 필요한 내용을 작성해 주세요.
-
 
 # 어플리케이션 기동과 종료
 
