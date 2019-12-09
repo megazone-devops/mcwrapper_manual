@@ -106,22 +106,31 @@
   > 빌드 영역의 종료 절차를 작성해 주세요.
 
 
-## 로그
+# 로그
 
 > **로그 경로 설정**
 >
 > 설정 파일(application.yml)의 logging.path에 설정합니다. 자세한 설정 방법은 [스프링부트 가이드](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)를 참조하세요.
 
 
+# 데이터 백업
+> 지원예정
+
 
 # 모니터링
 > 지원예정
 
-# SSH Key 등록
+# 장애대응
+> 지원예정
+
+# 별첨
+
+
+## SSH Key 등록
 
 파이프라인 변수 중에는 git private key를 등록해야 할 경우가 있습니다. 이때, SSH Key가 없다면 새로운 SSH 키 페어를 생성해야 합니다.
 
-## SSH Key 생성
+### SSH Key 생성
 
 Terminal을 열고 ssh를 만들어 보겠습니다.
 
@@ -173,7 +182,7 @@ cd ~/.ssh
 
 id_ed25519 id_ed25519.pub가 생성되어 있는 것을 확인할 수 있습니다.
 
-## SSH Key 등록
+### SSH Key 등록
 
 운영 체제에 따라 아래 명령 중 하나를 사용 하여 공개 SSH 키를 클립 보드에 복사하십시오 .
 
@@ -200,7 +209,7 @@ cat ~/.ssh/id_ed25519.pub | clip
 
 복사된 키를 사용자 계정에 등록합니다.
 
-## 참조
+### 참조
 
 보다 자세한 내용은 아래의 페이지들을 참조하시기 바랍니다.
 
@@ -209,16 +218,9 @@ cat ~/.ssh/id_ed25519.pub | clip
 - GitHub: <https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>
 
 
-# 장애 대응
+## Oauth 2.0 Login 설정
 
-# Oauth 2.0 Login 설정
-
-## Google
-
-## Naver
-
-## Kakao
-
-## GitHub
-
-## Facebook
+### Google
+> **ㅇㅇㅇㅇ**
+>
+> 구글 Console API 등록 방법만 작성하기로 함.
