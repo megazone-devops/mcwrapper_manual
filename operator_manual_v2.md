@@ -25,12 +25,12 @@
 
 ![Architecture](./assets/images/install_arch.png)
 
-#### Application Area 
+## Application Area 
 - Front - McWrapper 화면 구성 및 GUI 처리
-  > **$MC_WRAPPER_PACKAGE_INSTALL_PATH/docker-compose.yml**
+  > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   >```
   > mc-wrapper-vue:
-  >  image: registry.mzdev.kr/mc_wrapper/wrapper-app-vue:1.0.0-RELEASE-wonderplace
+  >  image: registry.mzdev.kr/mc_wrapper/wrapper-app-vue:1.0.0-RELEASE
   >  container_name: mc-wrapper-app-vue
   >  ports:
   >    - "80:80"
@@ -39,7 +39,7 @@
   > - port: 클라이언트에서 브라우져를 사용하여 접근할 포트 주소를 작성한다.
 
 - BackEnd - Front 에서 호출하는 API 처리
-  > **$MC_WRAPPER_PACKAGE_INSTALL_PATH/docker-compose.yml**
+  > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   >```
   >mc-wrapper-md-monolithic:
   >  image: registry.mzdev.kr/mc_wrapper/54-mon:1.3.0-RELEASE
@@ -58,7 +58,7 @@
   > - volumes: 어플리케이션에서 사용할 Config 파일 경로를 지정한다.
 
 - DBMS - 비 휘발성 데이터 저장 (별도 DBMS 서버 사용시 생략 가능)
-  > **$MC_WRAPPER_PACKAGE_INSTALL_PATH/docker-compose.yml**
+  > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   > ```
   >  mariadb:
   >  image: mariadb:10.2.15
@@ -77,10 +77,9 @@
   > - volumes: Docker 컨테이너 다운시에도 저장된 데이터를 유지키시기 위하여 local 경로를 지정해 준다.
   > - environment: mariadb 관리자 계정 정보를 지정해 준다.
 
-- MessageQueue - 어플리케이션 간 메세지 전달 전담
-
+- MessageQueue - 어플리케이션 간 메세지 전달
   > **Runtime Options**
-  >
+  > ```
   > 설정이 필요한 내용을 작성해 주세요.
 
 - CI-Interface - CI Tool 과의 인터페이스 전담
@@ -88,7 +87,7 @@
   >
   > 설정이 필요한 내용을 작성해 주세요.
 
-#### Repository Area
+## Repository Area
 - SCM - 개발자가 작성한 소스코드를 저장하는 영역
   > **Runtime Options**
   >
@@ -99,7 +98,7 @@
   >
   > 설정이 필요한 내용을 작성해 주세요.
 
-#### Build Area
+## Build Area
 - CI-Tool - Continuous Integration 을 통한 빌드 Artifact 생성
   > **Runtime Options**
   >
@@ -112,7 +111,7 @@
 
 # 어플리케이션 기동과 종료
 
-#### Application Area
+## Application Area
 
   > **기동 절차**
   >
@@ -122,7 +121,7 @@
   >
   > 어플리케이션 영역의 종료 절차를 작성해 주세요.
 
-#### Repository Area
+## Repository Area
   > **기동 절차**
   >
   > 레파지토리 영역의 기동 절차를 작성해 주세요.
@@ -131,7 +130,7 @@
   >
   > 레파지토리 영역의 종료 절차를 작성해 주세요.
 
-#### Build Area
+## Build Area
   > **기동 절차**
   >
   > 빌드 영역의 기동 절차를 작성해 주세요.
