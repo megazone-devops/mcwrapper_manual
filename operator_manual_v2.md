@@ -26,11 +26,11 @@
 ![Architecture](./assets/images/install_arch.png)
 
 ## Application Area 
-- Front - McWrapper 화면 구성 및 GUI 처리
+- Front - McWrapper 화면 구성 및 GUI 처리를 담당한다.
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   >```
   > mc-wrapper-vue:
-  >  image: registry.mzdev.kr/mc_wrapper/wrapper-app-vue:1.0.0-RELEASE
+  >  image: dockerregistry.kr/mc_wrapper/wrapper-app-vue:1.0.0-RELEASE
   >  container_name: mc-wrapper-app-vue
   >  ports:
   >    - "80:80"
@@ -38,11 +38,11 @@
   > - image: DockerRegistry 에 저장되어 있는 지정된 Front 용 Image 명과 Tag 명을 작성한다. 
   > - port: 클라이언트에서 브라우져를 사용하여 접근할 포트 주소를 작성한다.
 
-- BackEnd - Front 에서 호출하는 API 처리
+- BackEnd - Front 에서 호출하는 API 처리를 담당한다.
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   >```
   >mc-wrapper-md-monolithic:
-  >  image: registry.mzdev.kr/mc_wrapper/54-mon:1.3.0-RELEASE
+  >  image: dockerregistry.kr/mc_wrapper/54-mon:1.3.0-RELEASE
   >  container_name: mc-wrapper-md-monolithic
   >  ports:
   >    - "8080:8080"
@@ -57,7 +57,7 @@
   > - environment: 어플리케이션 기동시 전달할 JAVA 환경변수를 지정한다.
   > - volumes: 어플리케이션에서 사용할 Config 파일 경로를 지정한다.
 
-- DBMS - 비 휘발성 데이터 저장 (별도 DBMS 서버 사용시 생략 가능)
+- DBMS - 비 휘발성 데이터 저장을 위한 영역으로 고객사에 별도 DBMS 서버 사용시 해당 DBMS 를 사용가능 하다. (Option)
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   > ```
   >  mariadb:
@@ -102,10 +102,10 @@
   >
   > ```
   >concourse-airplane:
-  >  image: registry.mzdev.kr/mc_wrapper/concourse_airplane:1.1.0-RELEASE
+  >  image: dockerregistry.kr/mc_wrapper/concourse_airplane:1.1.0-RELEASE
   >  container_name: concourse-airplane
   >  environment:
-  >    - CONCOURSE_WEB_SERVER=http://13.124.126.39:80
+  >    - CONCOURSE_WEB_SERVER=http://HOST_NAME:80
   >    - AIRPLANE_USER=admin
   >    - AIRPLANE_PASSWORD=패스워드
   >    - PORT=8090
@@ -133,7 +133,7 @@
   >
   > 설정이 필요한 내용을 작성해 주세요.
 
-- Container Platform - CI-CD Tool 에서 빌드가 완료된 Artifact 를 Container Image 로 생성하는 작업을 수행한다. 아래는 Docker Image 를 생성하기 위한 설치 패키지 예시를 작성한다.
+- Container Platform - CI-CD 도구 에서 빌드가 완료된 Artifact 를 Container Image 로 생성하는 작업을 수행한다. 아래는 Docker Image 를 생성하기 위한 설치 패키지 예시를 작성한다.
   > **Runtime Options**
   >
   > 설정이 필요한 내용을 작성해 주세요.
@@ -144,13 +144,13 @@
 
   > **기동 절차**
   >
-  > cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH} 
-  > docker-compose up -d
+  > $cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH}   
+  > $docker-compose up -d
 
   > **종료 절차**
   >
-  > cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH} 
-  > docker-compose down
+  > $cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH}  
+  > $docker-compose down
 
 ## Repository Area
   > **기동 절차**
@@ -170,6 +170,118 @@
   >
   > 빌드 영역의 종료 절차를 작성해 주세요.
 
+# 어플리케이션 환경설정
+
+## mc-wrapper-md-monolithic
+McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
+
+  > **${MC_WRAPPER_INSTALL_PATH}/config/application.yml**
+  >```yml
+  > application:  
+  >   #현재 Backend 어플리케이션에 사용하고 있는 domain 정보로 로그인 세션 및 라이센스 정책과 관련된 설정으로 일반 사용자의 수정은 권장하지 않는다.
+  >   representation-domain: domain_name.kr
+  >   
+  > spring:
+  > ## Multipart 용량 제한 설정으로 첨부파일의 최대크기를 지정한다.
+  >   servlet:
+  >     multipart:
+  >       max-file-size: 100MB
+  >       max-request-size: 100MB
+  > 
+  > ## Datasource 접속정보로 어플리케이션에서 사용할 DBMS 접근 정보를 지정한다.
+  >   datasource:
+  >     url: "jdbc://지정된 DBMS 의 Conneciton String"
+  >     username: "아이디"
+  >     password: "패스워드"
+  > 
+  > ## Oauth2 클라이언트 설정으로 google 인증서버를 기본으로 사용하며 클라이언트 아이디 발급 방법은 "별첨" 을 참고한다.
+  >   security:
+  >     oauth2:
+  >       client:
+  >         registration:
+  >           google:
+  >             client-id: "생성된 구글 클라이언트 아이디"
+  >             client-secret: "구글 클라이언트 인증키"
+  > ## 어플리케이션에서 메일을 발송하기 위한 메일서버 정보를 설정한다.
+  >   mail:
+  >     host: "SMTP 서버 주소"
+  >     port: 587 (SMTP 포트번호)
+  >     username: "devops_support@mz.co.kr"
+  >     password: "password"
+  >     properties:
+  >       mail:
+  >         smtp: (SMTP 서버 타입에 따른 인증 규칙 설정)
+  >           auth: true 
+  >           starttls.enable: false
+  > 
+  > ## 어플리케이션 Logging 설정으로 로그파일 저장경로 및 로깅패턴, 로그레벨 등을 지정한다. 
+  > logging:
+  >   path: /tmp/mc_wrapper
+  >   file: 
+  >     max-size: 30MB
+  >     max-history: 10    
+  >   pattern:
+  >     console: '%d{MM/dd HH:mm:ss.SSS} [%t] [%clr(%-5p)] %clr(%logger.%M\(%line\)){cyan} - %msg %n'
+  >     file: '%d{MM/dd HH:mm:ss.SSS} [%t] [%clr(%-5p)] %clr(%logger.%M\(%line\)){cyan} - %msg %n'
+  >   level:
+  >     root: info
+  >     #해당 설정은 안정화 및 이슈추적시에만 사용하고 그외에는 주석처리 하는 것을 권장한다.
+  >     #com.megazone.devops: debug
+  > 
+  > ## McWrapepr 커스터 마이징 설정
+  > mz:
+  >   # Mc-Wrapper 서비스별 호출 URL정보를 지정한다.
+  >   micro-service:
+  >     service:
+  >       devops-gateway: "https://mc-wrapper.url"
+  >       devops-wrapper-md: "https://mc-wrapper.url"
+  >       devops-wrapper-if: "https://mc-wrapper.url"
+  >       devops-notification: "https://mc-wrapper.url"
+  >       devops-users: "https://mc-wrapper.url"
+  >       devops-comment: "https://mc-wrapper.url"
+  >       devops-comment-ui: "https://mc-wrapper.url"
+  >       devops-airplane: "https://airplane.url"
+  >   # Mc-Wrapper 서비스별 트랜잭션 처리를 위한 MQ 호출정보를 지정한다.
+  >   global-transaction:
+  >     listeners:
+  >       addresses: "MQ_호스트명:5672"
+  >       username: "MQ_아이디"
+  >       password: "MQ_패스워드"
+  >       vhost: "V_HOST_명"
+  >       uris: "amqp://MQ_아이디:MQ_패스워드@MQ_호스트명:5672/V_HOST_명"    
+  >   # 어플리케이션 데이터 암호화를 위한 설정
+  >   security:
+  >     encryption:
+  >       key:
+  >         # 단방향 암호화 키
+  >         oneway: '16자리공백을 제외한 Ascii 문자열'
+  >         # 대칭키 암호화 키
+  >         symmetric: '16자리공백을 제외한 Ascii 문자열'
+  >         # 내부 인터페이스 암호화 키
+  >         innerInterface: '16자리공백을 제외한 Ascii 문자열'
+  >   wrapper:
+  >     # Mc-Wrapper 에서 릴리즈 티켓 생성시 생성되는 개발,테스트,운영 서버의 접근 정보를 지정한다.
+  >     delevery-domain:
+  >       # 프로토콜 정보
+  >       protocol: "https://"
+  >       # 
+  >       dev: ".dev.site.kr"
+  >       stg: ".stg.site.kr"
+  >       prd: ".prd.site.kr"
+  >     invite:
+  >       url: "http://front.application.kr:8090/sign-in"
+  >   notifications:
+  >     batch:
+  >       interval: 60
+  >     mail:
+  >       from: "devops_solution@mz.co.kr"
+  >```
+
+## 그외 환경설정 파일이 존재하는 어플리케이션
+
+  > **설정파일 경로**
+  >
+  > 설정에 대한 설명을 기술
 
 # 로그
 
