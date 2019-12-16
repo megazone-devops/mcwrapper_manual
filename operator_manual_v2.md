@@ -78,33 +78,62 @@
   > - environment: mariadb 관리자 계정 정보를 지정해 준다.
 
 - MessageQueue - 어플리케이션 간 메세지 전달
-  > **Runtime Options**
+  > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   > ```
-  > 설정이 필요한 내용을 작성해 주세요.
+  > rabbitmq:
+  >  image: rabbitmq:management
+  >  container_name: rabbitmq
+  >  environment:
+  >    - RABBITMQ_DEFAULT_USER=admin
+  >    - RABBITMQ_DEFAULT_PASS=패스워드
+  >    - RABBITMQ_DEFAULT_VHOST=my_vhost
+  >  ports:
+  >    - "9999:15672"
+  >  volumes:
+  >   - ./rabbitmq/db:/var/lib/rabbitmq/mnesia
+  > ```
+  > - image: DockerRegistry 에 저장되어 있는 지정된 Rabbitmq Image 명과 Tag 명을 작성한다.
+  > - port: BackEnd 에서 Rabbitmq 연결시 사용할 Port 번호를 지정한다.
+  > - volumes: Docker 컨테이너 다운시에도 저장된 데이터를 유지키시기 위하여 local 경로를 지정해 준다.
+  > - environment: Rabbitmq 의 계정 정보 및 VHOST 정보를 지정해 주며 해당 정보는 "mc-wrapper-md-monolithic" 의 applicaiton.yml 과 연동되는 설정이다.  
 
-- CI-Interface - CI Tool 과의 인터페이스 전담
-  > **Runtime Options**
+- CI-Interface - 지정된 CI Tool 과의 인터페이스 모듈
+  > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   >
-  > 설정이 필요한 내용을 작성해 주세요.
+  > ```
+  >concourse-airplane:
+  >  image: registry.mzdev.kr/mc_wrapper/concourse_airplane:1.1.0-RELEASE
+  >  container_name: concourse-airplane
+  >  environment:
+  >    - CONCOURSE_WEB_SERVER=http://13.124.126.39:80
+  >    - AIRPLANE_USER=admin
+  >    - AIRPLANE_PASSWORD=패스워드
+  >    - PORT=8090
+  >  ports:
+  >    - "8090:8090"
+  > ```
+  > - image: DockerRegistry 에 저장되어 있는 지정된 CI 도구용 Image 명과 Tag 명을 작성한다.
+  > - port: Application 및 CI 도구에서 해당 모듈과 통신시 사용할 Port 번호를 지정한다.
+  > - environment: CI 도구 에 접근하기 위한 접속 정보와 CI-IF 모듈의 환경 정보를 기술한다.  
 
 ## Repository Area
-- SCM - 개발자가 작성한 소스코드를 저장하는 영역
+- SCM - 개발자가 작성한 소스코드를 저장하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능 하다. (Option). 아래는 Docker Image 를 사용한 GitLab 환경 구성 예시를 설명한다.
   > **Runtime Options**
   >
   > 설정이 필요한 내용을 작성해 주세요.
 
-- ContainerRegistry - CI 툴에서 생성한 Container Image 를 저장하는 영역
+- ContainerRegistry - CI-CD 툴에서 생성한 Container Image 를 저장하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능하다. (Option). 아래는 Docker Image 를 사용한 Harbor 환경 구성 예시를 설명한다.
   > **Runtime Options**
   >
   > 설정이 필요한 내용을 작성해 주세요.
 
 ## Build Area
-- CI-Tool - Continuous Integration 을 통한 빌드 Artifact 생성
+- CI-CD-Tool - CI-CD 를 위한 도구를 구성하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능하다. (Option). 아래는 Docker Image 를 사용한 Concourse 환경 구성 예시를 설명한다.
   > **Runtime Options**
   >
   > 설정이 필요한 내용을 작성해 주세요.
 
-- Container Platform - 빌드가 완료된 Artifact 를 Container Image 로 생성
+- Container Platform - CI-CD Tool 에서 빌드가 완료된 Artifact 를 Container Image 로 생성하는 작업을 수행한다. 아래는 Docker Image 를 생성하기 위한 설치 패키지 예시를 작성한다.
   > **Runtime Options**
   >
   > 설정이 필요한 내용을 작성해 주세요.
@@ -115,11 +144,13 @@
 
   > **기동 절차**
   >
-  > 어플리케이션 영역의 기동 절차를 작성해 주세요.
+  > cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH} 
+  > docker-compose up -d
 
   > **종료 절차**
   >
-  > 어플리케이션 영역의 종료 절차를 작성해 주세요.
+  > cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH} 
+  > docker-compose down
 
 ## Repository Area
   > **기동 절차**
