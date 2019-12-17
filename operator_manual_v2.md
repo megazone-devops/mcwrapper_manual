@@ -398,7 +398,7 @@ Mc-Wrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하며 googl
 
 ### Google Oauth2 인증 설정
 
-1. Mc-Wrapper 에서 사용하고 있는 관리자 계정으로 google api console 서비스에 로그인한다.
+1. Mc-Wrapper 에서 사용할 관리자 계정으로 google api console 서비스에 로그인한다.
    ```
    https://console.developers.google.com/
    ```
