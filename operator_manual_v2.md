@@ -218,7 +218,7 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
   >           starttls.enable: false
   > 
   > ## 어플리케이션 Logging 설정으로 로그파일 저장경로 및 로깅패턴, 로그레벨 등을 지정한다. 
-  > ## 자세한 설정 방법은 [아래 URL 을 참고
+  > ## 자세한 설정 방법은 아래 URL 을 참고
   > ## https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html
   > logging:
   >   path: /tmp/mc_wrapper
@@ -394,7 +394,7 @@ cat ~/.ssh/id_ed25519.pub | clip
 
 ## Oauth 2.0 Login 설정
 
-Mc-Wrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하여 google, naver, kakao, github 의 oauth2 인증서버를 등록가능하다. 본 별첨 부록에서는 google 에서 지원하는 oauth2 클라이언트 등록방법 만을 설명하며, 그 외 다른 인증서비스 들도 유사한 방법으로 등록가능하다.
+Mc-Wrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하며 google, naver, kakao, github 에서 제공하는 oauth2 인증 서비스를 등록가능하다. 본 별첨 부록에서는 google 에서 지원하는 oauth2 클라이언트 등록방법 만을 가이드 하며, 다른 인증 서비스들도 해당 가이드와 유사한 절차를 따른다.
 
 ### Google Oauth2 인증 설정
 
