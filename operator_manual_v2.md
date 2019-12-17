@@ -217,7 +217,8 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
   >           auth: true 
   >           starttls.enable: false
   > 
-  > ## 어플리케이션 Logging 설정으로 로그파일 저장경로 및 로깅패턴, 로그레벨 등을 지정한다. 자세한 설정 방법은 [스프링부트 가이드](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)를 참조.
+  > ## 어플리케이션 Logging 설정으로 로그파일 저장경로 및 로깅패턴, 로그레벨 등을 지정한다. 
+  > ## 자세한 설정 방법은 [스프링부트 가이드](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)를 참조.
   > logging:
   >   path: /tmp/mc_wrapper
   >   file: 
