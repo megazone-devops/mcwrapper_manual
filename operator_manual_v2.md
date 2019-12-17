@@ -26,6 +26,7 @@
 ![Architecture](./assets/images/install_arch.png)
 
 ## Application Area 
+Mc-Wrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 의미한다.
 - Front - McWrapper 화면 구성 및 GUI 처리를 담당한다.
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   >```
@@ -117,6 +118,7 @@
   > - environment: CI 도구 에 접근하기 위한 접속 정보와 CI-IF 모듈의 환경 정보를 기술한다.  
 
 ## Repository Area
+소스코드 및 빌드 결과물인 Image를 저장하는 모듈들이 구동되는 영역이다.
 - SCM - 개발자가 작성한 소스코드를 저장하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능 하다. (Option). 아래는 Docker Image 를 사용한 GitLab 환경 구성 예시를 설명한다.
   > **Runtime Options**
   >
@@ -128,6 +130,7 @@
   > 설정이 필요한 내용을 작성해 주세요.
 
 ## Build Area
+파이프 라인을 관리 및 개발된 소스코드를 빌드, Image 생성 모듈들이 구동되는 영역이다.
 - CI-CD-Tool - CI-CD 를 위한 도구를 구성하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능하다. (Option). 아래는 Docker Image 를 사용한 Concourse 환경 구성 예시를 설명한다.
   > **Runtime Options**
   >
@@ -214,7 +217,7 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
   >           auth: true 
   >           starttls.enable: false
   > 
-  > ## 어플리케이션 Logging 설정으로 로그파일 저장경로 및 로깅패턴, 로그레벨 등을 지정한다. 
+  > ## 어플리케이션 Logging 설정으로 로그파일 저장경로 및 로깅패턴, 로그레벨 등을 지정한다. 자세한 설정 방법은 [스프링부트 가이드](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)를 참조.
   > logging:
   >   path: /tmp/mc_wrapper
   >   file: 
@@ -283,16 +286,9 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
   >
   > 설정에 대한 설명을 기술
 
-# 로그
-
-> **로그 경로 설정**
->
-> 설정 파일(application.yml)의 logging.path에 설정합니다. 자세한 설정 방법은 [스프링부트 가이드](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)를 참조하세요.
-
 
 # 데이터 백업
 > 지원예정
-
 
 # 모니터링
 > 지원예정
@@ -301,7 +297,6 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
 > 지원예정
 
 # 별첨
-
 
 ## SSH Key 등록
 
@@ -397,7 +392,36 @@ cat ~/.ssh/id_ed25519.pub | clip
 
 ## Oauth 2.0 Login 설정
 
-### Google
-> **ㅇㅇㅇㅇ**
->
-> 구글 Console API 등록 방법만 작성하기로 함.
+Mc-Wrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하여 google, naver, kakao, github 의 oauth2 인증서버를 등록가능하다. 본 별첨 부록에서는 google 에서 지원하는 oauth2 클라이언트 등록방법 만을 설명하며, 그 외 다른 인증서비스 들도 유사한 방법으로 등록가능하다.
+
+### Google Oauth2 인증 설정
+
+1. Mc-Wrapper 에서 사용하고 있는 관리자 계정으로 google api console 서비스에 로그인한다.
+   ```
+   https://console.developers.google.com/
+   ```
+
+2. Google Api 서비스에서 OAuth 동의 화면 메뉴를 선택하고, User Type 은 외부를 선택후 [만들기] 버튼을 클릭한다.
+   ![oauth2](./assets/images/google_oauth_step00-0.png)
+
+3. Google Api 서비스에서 프로젝트를 생성한다. 기 생성된 프로젝트가 존재한다면 해당 프로젝트를 사용해도 무방하다.  
+   ![oauth2](./assets/images/google_oauth_step00-1.png)
+
+4. "OAuth 동의 화면" 메뉴에서 "애플리케이션 이름" 과 "승인된 도메인" 항목을 작성 후 [저장] 버튼을 클릭한다.
+   ```
+   "승인된 도메인" 항목은 Mc-Wrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.  
+   ```
+   ![oauth2](./assets/images/google_oauth_step00-2.png)
+
+5. Google Api 서비스에서 "사용자 인증 정보" 메뉴를 선택 후 [사용자 인증 정보 만들기] 버튼을 클릭하여 팝업된 리스트 중 "OAuth 클라이언트 ID" 를 선택한다.
+   ![oauth2](./assets/images/google_oauth_step02-00.png)
+
+6. "OAuth 클라이언트 ID 만들기" 화면에서 "애플리케이션 유형" 은 "웹 애플리케이션" 을 선택하고, "이름", "승인된 자바스크립트 원본", "승인된 디다렉션 URI" 항목을 작성후 [생성] 버튼을 클릭한다.
+   ```
+   "승인된 자바스크립트 원본" 항목은 Mc-Wrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.  
+   "승인된 디다렉션 URI" 항목은 Mc-Wrapper Backend Application 에 할당된 도메인 정보 뒤에 "/login/oauth2/code/google" 을 추가해서 입력한다.
+   ```
+   ![oauth2](./assets/images/google_oauth_step02-01.png)
+
+7. 최종 생성된 OAuth 클라이언트 정보 "클라이언트 ID" 와 "클라이언트 보안 비밀키" 를 지정된 환경설정 파일에 작성해 준다.   
+   ![oauth2](./assets/images/google_oauth_step02-02.png)
