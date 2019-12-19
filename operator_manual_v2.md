@@ -17,8 +17,8 @@
 ### - 클라이언트 요구사항
 | 구분    | 최소요구 사항 | 권장 사항   |
 | ------  | -------      |------ |
-| 브라우져      |  IE 11 이상 | Chrome 78.xx 이상 |
-| 해상도     | 1024x768                        | 모바일 기기 해상도|
+| 브라우져   IE 11 이상 | Chrome 78.xx 이상 |
+| 해상도 | 모바일 기기 해상도에 최적화 되어 있음. |
 
 
 # 시스템 구성도
@@ -26,7 +26,7 @@
 ![Architecture](./assets/images/install_arch.png)
 
 ## Application Area 
-Mc-Wrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 의미한다.
+McWrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 의미한다.
 - Front - McWrapper 화면 구성 및 GUI 처리를 담당한다.
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   >```
@@ -58,7 +58,7 @@ Mc-Wrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 �
   > - environment: 어플리케이션 기동시 전달할 JAVA 환경변수를 지정한다.
   > - volumes: 어플리케이션에서 사용할 Config 파일 경로를 지정한다.
 
-- DBMS - 비 휘발성 데이터 저장을 위한 영역으로 고객사에 별도 DBMS 서버 사용시 해당 DBMS 를 사용가능 하다. (Option)
+- DBMS - 비 휘발성 데이터 저장을 위한 영역으로 고객사에 별도 MariaDBMS(MySQL) 호환 DBMS 서버 사용시 해당 DBMS 를 사용가능 하다. (Option)
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   > ```
   >  mariadb:
@@ -185,12 +185,6 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
   >   representation-domain: domain_name.kr
   >   
   > spring:
-  > ## Multipart 용량 제한 설정으로 첨부파일의 최대크기를 지정한다.
-  >   servlet:
-  >     multipart:
-  >       max-file-size: 100MB
-  >       max-request-size: 100MB
-  > 
   > ## Datasource 접속정보로 어플리케이션에서 사용할 DBMS 접근 정보를 지정한다.
   >   datasource:
   >     url: "jdbc://지정된 DBMS 의 Conneciton String"
@@ -394,11 +388,11 @@ cat ~/.ssh/id_ed25519.pub | clip
 
 ## Oauth 2.0 Login 설정
 
-Mc-Wrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하며 google, naver, kakao, github 에서 제공하는 oauth2 인증 서비스를 등록가능하다. 본 별첨 부록에서는 google 에서 지원하는 oauth2 클라이언트 등록방법 만을 가이드 하며, 다른 인증 서비스들도 해당 가이드와 유사한 절차를 따른다.
+McWrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하며 google, naver, kakao, github 에서 제공하는 oauth2 인증 서비스를 등록가능하다. 본 별첨 부록에서는 google 에서 지원하는 oauth2 클라이언트 등록방법 만을 가이드 하며, 다른 인증 서비스들도 해당 가이드와 유사한 절차를 따른다.
 
 ### Google Oauth2 인증 설정
 
-1. Mc-Wrapper 에서 사용할 관리자 계정으로 google api console 서비스에 로그인한다.
+1. McWrapper 에서 사용할 관리자 계정으로 google api console 서비스에 로그인한다.
    ```
    https://console.developers.google.com/
    ```
@@ -411,7 +405,7 @@ Mc-Wrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하며 googl
 
 4. "OAuth 동의 화면" 메뉴에서 "애플리케이션 이름" 과 "승인된 도메인" 항목을 작성 후 [저장] 버튼을 클릭한다.
    ```
-   "승인된 도메인" 항목은 Mc-Wrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.  
+   "승인된 도메인" 항목은 McWrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.  
    ```
    ![oauth2](./assets/images/google_oauth_step00-2.png)
 
@@ -420,8 +414,8 @@ Mc-Wrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하며 googl
 
 6. "OAuth 클라이언트 ID 만들기" 화면에서 "애플리케이션 유형" 은 "웹 애플리케이션" 을 선택하고, "이름", "승인된 자바스크립트 원본", "승인된 디다렉션 URI" 항목을 작성후 [생성] 버튼을 클릭한다.
    ```
-   "승인된 자바스크립트 원본" 항목은 Mc-Wrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.  
-   "승인된 디다렉션 URI" 항목은 Mc-Wrapper Backend Application 에 할당된 도메인 정보 뒤에 "/login/oauth2/code/google" 을 추가해서 입력한다.
+   "승인된 자바스크립트 원본" 항목은 McWrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.  
+   "승인된 디다렉션 URI" 항목은 McWrapper Backend Application 에 할당된 도메인 정보 뒤에 "/login/oauth2/code/google" 을 추가해서 입력한다.
    ```
    ![oauth2](./assets/images/google_oauth_step02-01.png)
 
