@@ -25,7 +25,7 @@
 
 ![Architecture](./assets/images/install_arch.png)
 
-## Application Area 
+## Application Area
 McWrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 의미한다.
 - Front - McWrapper 화면 구성 및 GUI 처리를 담당한다.
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
@@ -36,8 +36,8 @@ McWrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 �
   >  ports:
   >    - "80:80"
   > ```
-  > - image: DockerRegistry 에 저장되어 있는 지정된 Front 용 Image 명과 Tag 명을 작성한다. 
-  > - port: 클라이언트에서 브라우져를 사용하여 접근할 포트 주소를 작성한다.
+  > - image: Docker Registry에 저장되어 있는 지정된 Front 용 Image 이름과 Tag 이름을 작성한다.
+  > - port: 클라이언트에서 브라우져를 사용하여 접근할 포트 번호를 지정한다.
 
 - BackEnd - Front 에서 호출하는 API 처리를 담당한다.
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
@@ -53,12 +53,12 @@ McWrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 �
   >    - ./config:/app/config
   >  restart: always
   >```
-  > - image: DockerRegistry 에 저장되어 있는 지정된 BackEnd 용 Image 명과 Tag 명을 작성한다.
-  > - port: BackEnd API 호출시 사용할 Port 번호를 지정한다.
-  > - environment: 어플리케이션 기동시 전달할 JAVA 환경변수를 지정한다.
+  > - image: Docker Registry 에 저장되어 있는 지정된 BackEnd 용 Image 이름과 Tag 이름을 작성한다.
+  > - port: BackEnd API 호출 시 사용할 포트 번호를 지정한다.
+  > - environment: 어플리케이션 기동 시 전달할 JAVA 환경변수를 지정한다.
   > - volumes: 어플리케이션에서 사용할 Config 파일 경로를 지정한다.
 
-- DBMS - 비 휘발성 데이터 저장을 위한 영역으로 고객사에 별도 MariaDBMS(MySQL) 호환 DBMS 서버 사용시 해당 DBMS 를 사용가능 하다. (Option)
+- DBMS - 비 휘발성 데이터 저장을 위한 영역으로, 고객사의 니즈에 맞추어 별도 MariaDB (MySQL) 호환 DBMS 서버 사용가능하다. (Option)
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   > ```
   >  mariadb:
@@ -73,10 +73,10 @@ McWrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 �
   >    - MYSQL_USER=user
   >    - MYSQL_PASSWORD=password
   > ```
-  > - image: DockerRegistry 에 저장되어 있는 지정된 Mariadb Image 명과 Tag 명을 작성한다.
-  > - port: BackEnd 에서 DBMS 연결시 사용할 Port 번호를 지정한다.
-  > - volumes: Docker 컨테이너 다운시에도 저장된 데이터를 유지키시기 위하여 local 경로를 지정해 준다.
-  > - environment: mariadb 관리자 계정 정보를 지정해 준다.
+  > - image: Docker Registry에 저장되어 있는 지정된 Mariadb Image 이름과 Tag 이름을 작성한다.
+  > - port: BackEnd에서 DBMS 연결시 사용할 포트 번호를 지정한다.
+  > - volumes: Docker Container 중지시에도 저장된 데이터를 유지키시기 위하여 local 경로를 지정한다.
+  > - environment: mariadb 관리자 계정 정보를 지정한다.
 
 - MessageQueue - 어플리케이션 간 메세지 전달
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
@@ -93,12 +93,12 @@ McWrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 �
   >  volumes:
   >   - ./rabbitmq/db:/var/lib/rabbitmq/mnesia
   > ```
-  > - image: DockerRegistry 에 저장되어 있는 지정된 Rabbitmq Image 명과 Tag 명을 작성한다.
-  > - port: BackEnd 에서 Rabbitmq 연결시 사용할 Port 번호를 지정한다.
-  > - volumes: Docker 컨테이너 다운시에도 저장된 데이터를 유지키시기 위하여 local 경로를 지정해 준다.
-  > - environment: Rabbitmq 의 계정 정보 및 VHOST 정보를 지정해 주며 해당 정보는 "mc-wrapper-md-monolithic" 의 applicaiton.yml 과 연동되는 설정이다.  
+  > - image: Docker Registry 에 저장되어 있는 지정된 Rabbitmq Image 이름과 Tag 이름을 작성한다.
+  > - port: BackEnd 에서 Rabbitmq 연결 시 사용할 포트 번호를 지정한다.
+  > - volumes: Docker Container 중지시에도 저장된 데이터를 유지키시기 위하여 local 경로를 지정해 준다.
+  > - environment: Rabbitmq의 계정 정보 및 VHOST 정보를 지정하고, 해당 정보는 "mc-wrapper-md-monolithic" 의 applicaiton.yml 과 연동된다.
 
-- CI-Interface - 지정된 CI Tool 과의 인터페이스 모듈
+- CI Interface - 지정된 CI Tool 과의 인터페이스 모듈
   > **${MC_WRAPPER_PACKAGE_INSTALL_PATH}/docker-compose.yml**
   >
   > ```
@@ -113,33 +113,33 @@ McWrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 �
   >  ports:
   >    - "8090:8090"
   > ```
-  > - image: DockerRegistry 에 저장되어 있는 지정된 CI 도구용 Image 명과 Tag 명을 작성한다.
-  > - port: Application 및 CI 도구에서 해당 모듈과 통신시 사용할 Port 번호를 지정한다.
-  > - environment: CI 도구 에 접근하기 위한 접속 정보와 CI-IF 모듈의 환경 정보를 기술한다.  
+  > - image: Docker Registry 에 저장되어 있는 지정된 CI Tool 용 Image 이름과 Tag 이름을 작성한다.
+  > - port: Application 및 CI Tool에서 해당 모듈과 통신 시 사용할 포트 번호를 지정한다.
+  > - environment: CI Tool에 접근하기 위한 접속 정보와 CI Interface 모듈의 환경 정보를 작성한다.
 
 ## Repository Area
 소스코드 및 빌드 결과물인 Image를 저장하는 모듈들이 구동되는 영역이다.
-- SCM - 개발자가 작성한 소스코드를 저장하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능 하다. (Option). 아래는 Docker Image 를 사용한 GitLab 환경 구성 예시를 설명한다.
+- SCM - 개발자가 작성한 소스코드를 저장하는 영역으로 고객사에서 사용중인 환경이 있다면 사용가능 하다. (Option). 아래는 Docker Image를 사용한 GitLab 환경 구성 예시를 설명한다.
   > **Runtime Options**
   >
-  > 설정이 필요한 내용을 작성해 주세요.
+  > 설정이 필요한 내용을 작성해주세요.
 
-- ContainerRegistry - CI-CD 툴에서 생성한 Container Image 를 저장하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능하다. (Option). 아래는 Docker Image 를 사용한 Harbor 환경 구성 예시를 설명한다.
+- Container Registry - CI/CD Tool에서 생성한 Container Image 를 저장하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능하다. (Option). 아래는 Docker Image 를 사용한 Harbor 환경 구성 예시를 설명한다.
   > **Runtime Options**
   >
-  > 설정이 필요한 내용을 작성해 주세요.
+  > 설정이 필요한 내용을 작성해주세요.
 
 ## Build Area
 파이프 라인을 관리 및 개발된 소스코드를 빌드, Image 생성 모듈들이 구동되는 영역이다.
-- CI-CD-Tool - CI-CD 를 위한 도구를 구성하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능하다. (Option). 아래는 Docker Image 를 사용한 Concourse 환경 구성 예시를 설명한다.
+- CI/CD Tool - CI/CD를 위한 Tool을 구성하는 영역으로 고객사에서 사용중인 환경이 있다면 해당 환경을 사용가능하다. (Option). 아래는 Docker Image를 사용한 Concourse 환경 구성 예시를 설명한다.
   > **Runtime Options**
   >
-  > 설정이 필요한 내용을 작성해 주세요.
+  > 설정이 필요한 내용을 작성해주세요.
 
-- Container Platform - CI-CD 도구 에서 빌드가 완료된 Artifact 를 Container Image 로 생성하는 작업을 수행한다. 아래는 Docker Image 를 생성하기 위한 설치 패키지 예시를 작성한다.
+- Container Platform - CI/CD Tool에서 빌드가 완료된 Artifact를 Container Image로 생성하는 작업을 수행한다. 아래는 Docker Image를 생성하기 위한 설치 패키지 예시를 작성한다.
   > **Runtime Options**
   >
-  > 설정이 필요한 내용을 작성해 주세요.
+  > 설정이 필요한 내용을 작성해주세요.
 
 # 어플리케이션 기동과 종료
 
@@ -147,31 +147,31 @@ McWrapper 어플리케이션과 관련된 모듈들이 구동되는 영역을 �
 
   > **기동 절차**
   >
-  > $cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH}   
+  > $cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH}
   > $docker-compose up -d
 
   > **종료 절차**
   >
-  > $cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH}  
+  > $cd ${MC_WRAPPER_PACKAGE_INSTALL_PATH}
   > $docker-compose down
 
 ## Repository Area
   > **기동 절차**
   >
-  > 레파지토리 영역의 기동 절차를 작성해 주세요.
+  > 레파지토리 영역의 기동 절차를 작성해주세요.
 
   > **종료 절차**
   >
-  > 레파지토리 영역의 종료 절차를 작성해 주세요.
+  > 레파지토리 영역의 종료 절차를 작성해주세요.
 
 ## Build Area
   > **기동 절차**
   >
-  > 빌드 영역의 기동 절차를 작성해 주세요.
+  > 빌드 영역의 기동 절차를 작성해주세요.
 
   > **종료 절차**
   >
-  > 빌드 영역의 종료 절차를 작성해 주세요.
+  > 빌드 영역의 종료 절차를 작성해주세요.
 
 # 어플리케이션 환경설정
 
@@ -180,17 +180,17 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
 
   > **${MC_WRAPPER_INSTALL_PATH}/config/application.yml**
   >```yml
-  > application:  
+  > application:
   >   #현재 Backend 어플리케이션에 사용하고 있는 domain 정보로 로그인 세션 및 라이센스 정책과 관련된 설정으로 일반 사용자의 수정은 권장하지 않는다.
   >   representation-domain: domain_name.kr
-  >   
+  >
   > spring:
   > ## Datasource 접속정보로 어플리케이션에서 사용할 DBMS 접근 정보를 지정한다.
   >   datasource:
   >     url: "jdbc://지정된 DBMS 의 Conneciton String"
   >     username: "아이디"
   >     password: "패스워드"
-  > 
+  >
   > ## Oauth2 클라이언트 설정으로 google 인증서버를 기본으로 사용하며 클라이언트 아이디 발급 방법은 "별첨" 을 참고한다.
   >   security:
   >     oauth2:
@@ -208,25 +208,25 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
   >     properties:
   >       mail:
   >         smtp: (SMTP 서버 타입에 따른 인증 규칙 설정)
-  >           auth: true 
+  >           auth: true
   >           starttls.enable: false
-  > 
-  > ## 어플리케이션 Logging 설정으로 로그파일 저장경로 및 로깅패턴, 로그레벨 등을 지정한다. 
+  >
+  > ## 어플리케이션 Logging 설정으로 로그파일 저장경로 및 로깅패턴, 로그레벨 등을 지정한다.
   > ## 자세한 설정 방법은 아래 URL 을 참고
   > ## https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html
   > logging:
   >   path: /tmp/mc_wrapper
-  >   file: 
+  >   file:
   >     max-size: 30MB
-  >     max-history: 10    
+  >     max-history: 10
   >   pattern:
   >     console: '%d{MM/dd HH:mm:ss.SSS} [%t] [%clr(%-5p)] %clr(%logger.%M\(%line\)){cyan} - %msg %n'
   >     file: '%d{MM/dd HH:mm:ss.SSS} [%t] [%clr(%-5p)] %clr(%logger.%M\(%line\)){cyan} - %msg %n'
   >   level:
   >     root: info
-  >     #해당 설정은 안정화 및 이슈추적시에만 사용하고 그외에는 주석처리 하는 것을 권장한다.
+  >     #해당 설정은 안정화 및 이슈추적 시에만 사용하고 그외에는 주석처리 하는 것을 권장한다.
   >     #com.megazone.devops: debug
-  > 
+  >
   > ## McWrapepr 커스터 마이징 설정
   > mz:
   >   # Mc-Wrapper 서비스별 호출 URL정보를 지정한다.
@@ -247,7 +247,7 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
   >       username: "MQ_아이디"
   >       password: "MQ_패스워드"
   >       vhost: "V_HOST_명"
-  >       uris: "amqp://MQ_아이디:MQ_패스워드@MQ_호스트명:5672/V_HOST_명"    
+  >       uris: "amqp://MQ_아이디:MQ_패스워드@MQ_호스트명:5672/V_HOST_명"
   >   # 어플리케이션 데이터 암호화를 위한 설정
   >   security:
   >     encryption:
@@ -263,7 +263,7 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
   >     delevery-domain:
   >       # 프로토콜 정보
   >       protocol: "https://"
-  >       # 
+  >       #
   >       dev: ".dev.site.kr"
   >       stg: ".stg.site.kr"
   >       prd: ".prd.site.kr"
@@ -296,11 +296,11 @@ McWrapper Backend Application 의 주요 환경설정 정보를 설명한다.
 
 ## SSH Key 등록
 
-파이프라인 변수 중에는 git private key를 등록해야 할 경우가 있습니다. 이때, SSH Key가 없다면 새로운 SSH 키 페어를 생성해야 합니다.
+파이프라인 변수 중에는 git private key를 등록해야 할 경우가 있습니다. 이때, SSH Key가 없다면 새로운 SSH 키 페어를 생성해야합니다.
 
 ### SSH Key 생성
 
-Terminal을 열고 ssh를 만들어 보겠습니다.
+Terminal을 열고 ssh를 만들어보겠습니다.
 
 먼저 ssh key를 생성하기 전에 이미 생성된 key가 있는지 확인합니다.
 
@@ -311,7 +311,7 @@ No such file or directory
 
 아직 한번도 ssh key를 생성하지 않은 상태입니다.
 
-새로운 SSH key pair를 만들어 보겠습니다.
+새로운 SSH key pair를 만들어보겠습니다.
 
 - ED25519
 
@@ -331,7 +331,7 @@ Enter file in which to save the key (/Users/사용자이름/.ssh/id_ed25519):
 Created directory '/Users/사용자이름/.ssh'.
 ```
 
-어디에 key를 만들지 묻습니다. 여기에서는 엔터를 처서 기본 위치에 기본 파일명으로 만들도록 합니다.
+어디에 key를 만들지 묻습니다. 여기에서는 엔터를 처서 기본 위치에 기본 파일명으로 만들도록합니다.
 
 ```ssh
 Enter passphrase (empty for no passphrase):
@@ -342,7 +342,7 @@ Key에 대한 비밀번호를 만들라고 나오는데 여기에서는 엔터�
 
 그럼 키가 만들어지고 기본 위치(/Users/사용자이름/.ssh/id_ed25519)에 파일이 생성됩니다.
 
-이제 생성이 되어 있는지 확인해 봅시다.
+이제 생성이 되어 있는지 확인해봅시다.
 
 ```ssh
 cd ~/.ssh
@@ -352,7 +352,7 @@ id_ed25519 id_ed25519.pub가 생성되어 있는 것을 확인할 수 있습니�
 
 ### SSH Key 등록
 
-운영 체제에 따라 아래 명령 중 하나를 사용 하여 공개 SSH 키를 클립 보드에 복사하십시오 .
+운영 체제에 따라 아래 명령 중 하나를 사용 하여 공개 SSH 키를 클립 보드에 복사하십시오.
 
 ```
 맥 OS:
@@ -400,12 +400,12 @@ McWrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하며 google
 2. Google Api 서비스에서 OAuth 동의 화면 메뉴를 선택하고, User Type 은 외부를 선택후 [만들기] 버튼을 클릭한다.
    ![oauth2](./assets/images/google_oauth_step00-0.png)
 
-3. Google Api 서비스에서 프로젝트를 생성한다. 기 생성된 프로젝트가 존재한다면 해당 프로젝트를 사용해도 무방하다.  
+3. Google Api 서비스에서 프로젝트를 생성한다. 기 생성된 프로젝트가 존재한다면 해당 프로젝트를 사용해도 무방하다.
    ![oauth2](./assets/images/google_oauth_step00-1.png)
 
 4. "OAuth 동의 화면" 메뉴에서 "애플리케이션 이름" 과 "승인된 도메인" 항목을 작성 후 [저장] 버튼을 클릭한다.
    ```
-   "승인된 도메인" 항목은 McWrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.  
+   "승인된 도메인" 항목은 McWrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야한다.
    ```
    ![oauth2](./assets/images/google_oauth_step00-2.png)
 
@@ -414,10 +414,10 @@ McWrapper 에서는 사용자 인증을 위하여 Oauth2 를 지원하며 google
 
 6. "OAuth 클라이언트 ID 만들기" 화면에서 "애플리케이션 유형" 은 "웹 애플리케이션" 을 선택하고, "이름", "승인된 자바스크립트 원본", "승인된 디다렉션 URI" 항목을 작성후 [생성] 버튼을 클릭한다.
    ```
-   "승인된 자바스크립트 원본" 항목은 McWrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.  
+   "승인된 자바스크립트 원본" 항목은 McWrapper 의 Backend Application 에 할당된 도메인 정보를 입력해야 한다.
    "승인된 디다렉션 URI" 항목은 McWrapper Backend Application 에 할당된 도메인 정보 뒤에 "/login/oauth2/code/google" 을 추가해서 입력한다.
    ```
    ![oauth2](./assets/images/google_oauth_step02-01.png)
 
-7. 최종 생성된 OAuth 클라이언트 정보 "클라이언트 ID" 와 "클라이언트 보안 비밀키" 를 지정된 환경설정 파일에 작성해 준다.   
+7. 최종 생성된 OAuth 클라이언트 정보 "클라이언트 ID" 와 "클라이언트 보안 비밀키" 를 지정된 환경설정 파일에 작성해준다.
    ![oauth2](./assets/images/google_oauth_step02-02.png)
