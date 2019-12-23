@@ -9,8 +9,8 @@
 
 | 구분    | 최소요구 사항 | 권장 사항   |
 | ------  | -------      |------ |
-| OS      | Docker Container 를 운영가능한 64bit OS  | Ubuntu 16 64bit 이상의 LTS 버전 |
-| CPU     | 2Core 2Ghz                        | 4Core 4Ghz (가상화 지원)|
+| OS      | Docker Container 운영 가능한 64bit OS  | Ubuntu 16 64bit 이상의 LTS 버전 |
+| CPU     | 2Core / 2Ghz                        | 4Core / 4Ghz (가상화 지원)|
 | 저장장치 | 8GB RAM / 20GB HDD               | 16GB RAM / 100GB HDD |
 | 네트워크 카드 | 100M | 기가비트 지원 네트워크 카드|
 
